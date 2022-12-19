@@ -16,6 +16,12 @@
 		4C55034E29379F3900699589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034D29379F3900699589 /* Assets.xcassets */; };
 		4C55035129379F3900699589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034F29379F3900699589 /* LaunchScreen.storyboard */; };
 		4C5503592937D32A00699589 /* NovoServicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5503582937D32A00699589 /* NovoServicoViewController.swift */; };
+		A30D83422950964100A0C205 /* SelectDate2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D833F2950964100A0C205 /* SelectDate2ViewController.swift */; };
+		A30D83432950964100A0C205 /* SelectDate2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83402950964100A0C205 /* SelectDate2View.swift */; };
+		A30D83442950964100A0C205 /* SelectDate2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83412950964100A0C205 /* SelectDate2ViewModel.swift */; };
+		A30D834A2950A35B00A0C205 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83492950A35B00A0C205 /* UIColor.swift */; };
+		A30D834D2950A8B100A0C205 /* ServiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D834C2950A8B100A0C205 /* ServiceData.swift */; };
+		A30D834F2950A90900A0C205 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D834E2950A90900A0C205 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		4C55035029379F3900699589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C55035229379F3900699589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C5503582937D32A00699589 /* NovoServicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoServicoViewController.swift; sourceTree = "<group>"; };
+		A30D833F2950964100A0C205 /* SelectDate2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDate2ViewController.swift; sourceTree = "<group>"; };
+		A30D83402950964100A0C205 /* SelectDate2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDate2View.swift; sourceTree = "<group>"; };
+		A30D83412950964100A0C205 /* SelectDate2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDate2ViewModel.swift; sourceTree = "<group>"; };
+		A30D83492950A35B00A0C205 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A30D834C2950A8B100A0C205 /* ServiceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceData.swift; sourceTree = "<group>"; };
+		A30D834E2950A90900A0C205 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +74,80 @@
 		4C55034329379F3600699589 /* PoliServices */ = {
 			isa = PBXGroup;
 			children = (
+				A30D83392950934000A0C205 /* AppDelegate */,
+				A30D83462950A2A500A0C205 /* Extensions */,
+				A30D833A2950934D00A0C205 /* Resources */,
+				A30D833B2950936200A0C205 /* Legacy */,
+				A30D834B2950A89300A0C205 /* Model */,
+				A30D833C295094F700A0C205 /* Screens */,
+				4C55035229379F3900699589 /* Info.plist */,
+			);
+			path = PoliServices;
+			sourceTree = "<group>";
+		};
+		A30D83392950934000A0C205 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
 				4C55034429379F3600699589 /* AppDelegate.swift */,
 				4C55034629379F3600699589 /* SceneDelegate.swift */,
-				4C55034829379F3600699589 /* ViewController.swift */,
-				4C55034A29379F3600699589 /* Main.storyboard */,
-				4C30F0A729391842002C3068 /* SelectDateViewController.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A30D833A2950934D00A0C205 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				4C55034D29379F3900699589 /* Assets.xcassets */,
 				4C55034F29379F3900699589 /* LaunchScreen.storyboard */,
-				4C55035229379F3900699589 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A30D833B2950936200A0C205 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				4C55034A29379F3600699589 /* Main.storyboard */,
+				4C55034829379F3600699589 /* ViewController.swift */,
+				4C30F0A729391842002C3068 /* SelectDateViewController.swift */,
 				4C5503582937D32A00699589 /* NovoServicoViewController.swift */,
 				4C30F0A529390FC6002C3068 /* ServiceCollectionViewCell.swift */,
 			);
-			path = PoliServices;
+			path = Legacy;
+			sourceTree = "<group>";
+		};
+		A30D833C295094F700A0C205 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A30D83452950964600A0C205 /* SelectDate */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A30D83452950964600A0C205 /* SelectDate */ = {
+			isa = PBXGroup;
+			children = (
+				A30D833F2950964100A0C205 /* SelectDate2ViewController.swift */,
+				A30D83402950964100A0C205 /* SelectDate2View.swift */,
+				A30D83412950964100A0C205 /* SelectDate2ViewModel.swift */,
+			);
+			path = SelectDate;
+			sourceTree = "<group>";
+		};
+		A30D83462950A2A500A0C205 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A30D83492950A35B00A0C205 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A30D834B2950A89300A0C205 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A30D834C2950A8B100A0C205 /* ServiceData.swift */,
+				A30D834E2950A90900A0C205 /* Service.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,11 +223,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C30F0A829391842002C3068 /* SelectDateViewController.swift in Sources */,
+				A30D83442950964100A0C205 /* SelectDate2ViewModel.swift in Sources */,
 				4C30F0A629390FC6002C3068 /* ServiceCollectionViewCell.swift in Sources */,
+				A30D834D2950A8B100A0C205 /* ServiceData.swift in Sources */,
+				A30D83422950964100A0C205 /* SelectDate2ViewController.swift in Sources */,
+				A30D834F2950A90900A0C205 /* Service.swift in Sources */,
+				A30D83432950964100A0C205 /* SelectDate2View.swift in Sources */,
 				4C55034929379F3600699589 /* ViewController.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
 				4C5503592937D32A00699589 /* NovoServicoViewController.swift in Sources */,
 				4C55034729379F3600699589 /* SceneDelegate.swift in Sources */,
+				A30D834A2950A35B00A0C205 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -63,7 +63,8 @@ class NovoServiceViewController: UIViewController, UICollectionViewDelegate, UIC
         } else if indexPath.row == 3 {
             nome = "Feedback"
         }
-        navigationController?.pushViewController(SelectDate2ViewController(), animated: true)
+        guard let nome = nome else { return }
+        navigationController?.pushViewController(SelectDate2ViewController(servico: nome), animated: true)
         // performSegue(withIdentifier: "dataServico", sender: nil)
     }
 
