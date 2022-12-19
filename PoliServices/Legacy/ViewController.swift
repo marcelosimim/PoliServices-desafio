@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onRequestNewServiceDidTap(_ sender: Any) {
-        let newService = UINavigationController(rootViewController: NewService2ViewController())
+        let newService = UINavigationController(rootViewController: NewServiceViewController())
         newService.modalPresentationStyle = .fullScreen
         present(newService, animated: true)
     }

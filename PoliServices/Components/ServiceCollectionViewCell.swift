@@ -9,7 +9,7 @@
 
 import UIKit
 
-class Service2CollectionViewCell: UICollectionViewCell {
+class ServiceCollectionViewCell: UICollectionViewCell {
     static let identifier = "\(ServiceCollectionViewCell.self)"
     var type: ServiceType?
 

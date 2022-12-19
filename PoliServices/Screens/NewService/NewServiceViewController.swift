@@ -8,7 +8,7 @@
 //
 import UIKit
 
-class NewService2ViewController: UIViewController {
+class NewServiceViewController: UIViewController {
     private lazy var customView: NewServiceViewProtocol = NewServiceView()
     private lazy var viewModel: NewServiceViewModelProtocol = NewServiceViewModel()
     private var serviceName: String?
@@ -44,7 +44,7 @@ class NewService2ViewController: UIViewController {
     }
 }
 
-extension NewService2ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension NewServiceViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -54,14 +54,14 @@ extension NewService2ViewController: UICollectionViewDelegate, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Service2CollectionViewCell.identifier, for: indexPath) as? Service2CollectionViewCell else { fatalError() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ServiceCollectionViewCell.identifier, for: indexPath) as? ServiceCollectionViewCell else { fatalError() }
         let service = viewModel.services[indexPath.row]
         cell.configure(service)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? Service2CollectionViewCell, let type = cell.type else { fatalError() }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ServiceCollectionViewCell, let type = cell.type else { fatalError() }
         serviceName = type.title
         goToSelectDate()
     }

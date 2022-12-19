@@ -20,7 +20,7 @@ final class NewServiceView: UIView, NewServiceViewProtocol {
         layout.itemSize = CGSize(width: 150, height: 150)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 22)
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(Service2CollectionViewCell.self, forCellWithReuseIdentifier: Service2CollectionViewCell.identifier)
+        collection.register(ServiceCollectionViewCell.self, forCellWithReuseIdentifier: ServiceCollectionViewCell.identifier)
         collection.backgroundColor = .clear
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
