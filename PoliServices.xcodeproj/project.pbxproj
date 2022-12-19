@@ -25,6 +25,11 @@
 		A30D83592950AE1700A0C205 /* ServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83582950AE1700A0C205 /* ServiceCollectionViewCell.swift */; };
 		A30D835E2950AE6200A0C205 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D835D2950AE6200A0C205 /* ServiceType.swift */; };
 		A30D83602950AEC700A0C205 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D835F2950AEC700A0C205 /* UIImage.swift */; };
+		A30D83652950CD2500A0C205 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83622950CD2500A0C205 /* HomeViewController.swift */; };
+		A30D83662950CD2500A0C205 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83632950CD2500A0C205 /* HomeView.swift */; };
+		A30D83672950CD2500A0C205 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83642950CD2500A0C205 /* HomeViewModel.swift */; };
+		A30D83692950CF7500A0C205 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83682950CF7500A0C205 /* InfoView.swift */; };
+		A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D836B2950D5C300A0C205 /* ServiceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,11 @@
 		A30D83582950AE1700A0C205 /* ServiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		A30D835D2950AE6200A0C205 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		A30D835F2950AEC700A0C205 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		A30D83622950CD2500A0C205 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A30D83632950CD2500A0C205 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A30D83642950CD2500A0C205 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A30D83682950CF7500A0C205 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		A30D836B2950D5C300A0C205 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,7 @@
 		A30D833C295094F700A0C205 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A30D83612950CD1900A0C205 /* Home */,
 				A30D83502950ABB600A0C205 /* NewService */,
 				A30D83452950964600A0C205 /* SelectDate */,
 			);
@@ -171,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				A30D83582950AE1700A0C205 /* ServiceCollectionViewCell.swift */,
+				A30D83682950CF7500A0C205 /* InfoView.swift */,
+				A30D836B2950D5C300A0C205 /* ServiceView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -181,6 +194,16 @@
 				A30D835D2950AE6200A0C205 /* ServiceType.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		A30D83612950CD1900A0C205 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A30D83622950CD2500A0C205 /* HomeViewController.swift */,
+				A30D83632950CD2500A0C205 /* HomeView.swift */,
+				A30D83642950CD2500A0C205 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,17 +279,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30D83562950ABDD00A0C205 /* NewServiceViewModel.swift in Sources */,
+				A30D83672950CD2500A0C205 /* HomeViewModel.swift in Sources */,
 				A30D835E2950AE6200A0C205 /* ServiceType.swift in Sources */,
 				A30D83442950964100A0C205 /* SelectDateViewModel.swift in Sources */,
 				A30D83542950ABDD00A0C205 /* NewServiceViewController.swift in Sources */,
 				A30D834D2950A8B100A0C205 /* ServiceData.swift in Sources */,
+				A30D83692950CF7500A0C205 /* InfoView.swift in Sources */,
+				A30D83662950CD2500A0C205 /* HomeView.swift in Sources */,
 				A30D83422950964100A0C205 /* SelectDateViewController.swift in Sources */,
 				A30D834F2950A90900A0C205 /* Service.swift in Sources */,
 				A30D83432950964100A0C205 /* SelectDateView.swift in Sources */,
 				4C55034929379F3600699589 /* ViewController.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
 				A30D83592950AE1700A0C205 /* ServiceCollectionViewCell.swift in Sources */,
+				A30D83652950CD2500A0C205 /* HomeViewController.swift in Sources */,
 				4C55034729379F3600699589 /* SceneDelegate.swift in Sources */,
+				A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */,
 				A30D83602950AEC700A0C205 /* UIImage.swift in Sources */,
 				A30D834A2950A35B00A0C205 /* UIColor.swift in Sources */,
 				A30D83552950ABDD00A0C205 /* NewServiceView.swift in Sources */,
@@ -423,7 +451,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Poli Services";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -457,7 +484,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Poli Services";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;

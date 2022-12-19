@@ -22,4 +22,6 @@ extension UIImage {
     static var career: UIImage { generateSystemImage("graduationcap.circle.fill") }
     static var interview: UIImage { generateSystemImage("books.vertical.fill") }
     static var feedback: UIImage { generateSystemImage("scribble.variable") }
+
+    static var book: UIImage { generateSystemImage("book.fill") }
 }

@@ -56,10 +56,10 @@ class ViewController: UIViewController {
             self.novoBtn.isHidden = hasService
         }
 
-        dateLabel.text = currentDate.formatted(
-            date: .long,
-            time: .omitted
-        )
+//        dateLabel.text = currentDate.formatted(
+//            date: .long,
+//            time: .omitted
+//        )
     }
 
     @IBAction func onRequestNewServiceDidTap(_ sender: Any) {
