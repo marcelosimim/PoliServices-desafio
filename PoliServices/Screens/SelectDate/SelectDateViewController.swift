@@ -1,6 +1,6 @@
 //
 //  
-//  SelectDate2ViewController.swift
+//  SelectDateViewController.swift
 //  PoliServices
 //
 //  Created by Marcelo Simim Santos on 12/19/22.
@@ -8,9 +8,9 @@
 //
 import UIKit
 
-class SelectDate2ViewController: UIViewController {
-    private lazy var customView: SelectDate2ViewProtocol = SelectDate2View()
-    private lazy var viewModel: SelectDate2ViewModelProtocol = SelectDate2ViewModel()
+class SelectDateViewController: UIViewController {
+    private lazy var customView: SelectDateViewProtocol = SelectDateView()
+    private lazy var viewModel: SelectDateViewModelProtocol = SelectDateViewModel()
     private let serviceName: String
 
     init(servico: String) {

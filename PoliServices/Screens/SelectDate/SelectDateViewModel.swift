@@ -1,6 +1,6 @@
 //
 //  
-//  SelectDate2ViewModel.swift
+//  SelectDateViewModel.swift
 //  PoliServices
 //
 //  Created by Marcelo Simim Santos on 12/19/22.
@@ -8,11 +8,11 @@
 //
 import Foundation
 
-protocol SelectDate2ViewModelProtocol {
+protocol SelectDateViewModelProtocol {
     func save(_ service: Service, completion: @escaping(() -> ()))
 }
 
-final class SelectDate2ViewModel: SelectDate2ViewModelProtocol {
+final class SelectDateViewModel: SelectDateViewModelProtocol {
     private let serviceData = ServiceData()
 
     func save(_ service: Service, completion: @escaping(() -> ())) {

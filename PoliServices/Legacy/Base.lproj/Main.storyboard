@@ -285,58 +285,11 @@ DevServices</string>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="fjd-mV-FM7" id="Ubc-Hu-JDY"/>
-                        <segue destination="WgK-tW-HDn" kind="show" identifier="dataServico" id="FkN-Ii-kkc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQm-aX-R3Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2876.811594202899" y="116.51785714285714"/>
-        </scene>
-        <!--Novo Serviço-->
-        <scene sceneID="3ce-j4-w06">
-            <objects>
-                <viewController id="WgK-tW-HDn" customClass="SelectDateViewController" customModule="PoliServices" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="U0e-cy-M55">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="CiD-6M-sC8">
-                                <rect key="frame" x="16" y="211.99999999999997" width="343" height="363.33333333333326"/>
-                                <locale key="locale" localeIdentifier="pt_BR"/>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione a data e hora para reservar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmi-tm-XBQ">
-                                <rect key="frame" x="16" y="113" width="343" height="67"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="uto-Rc-0Kg"/>
-                        <color key="backgroundColor" red="0.87726437369999999" green="0.8824504299" blue="0.92282551530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="CiD-6M-sC8" firstAttribute="leading" secondItem="uto-Rc-0Kg" secondAttribute="leading" constant="16" id="NDt-6b-DKs"/>
-                            <constraint firstItem="uto-Rc-0Kg" firstAttribute="trailing" secondItem="Xmi-tm-XBQ" secondAttribute="trailing" constant="16" id="Szr-xV-PHg"/>
-                            <constraint firstItem="Xmi-tm-XBQ" firstAttribute="top" secondItem="uto-Rc-0Kg" secondAttribute="top" constant="22" id="TOO-M4-ap1"/>
-                            <constraint firstItem="uto-Rc-0Kg" firstAttribute="trailing" secondItem="CiD-6M-sC8" secondAttribute="trailing" constant="16" id="Ugo-li-dVZ"/>
-                            <constraint firstItem="Xmi-tm-XBQ" firstAttribute="leading" secondItem="uto-Rc-0Kg" secondAttribute="leading" constant="16" id="arJ-Gc-0rk"/>
-                            <constraint firstItem="CiD-6M-sC8" firstAttribute="top" secondItem="Xmi-tm-XBQ" secondAttribute="bottom" constant="32" id="jMf-Gh-V2h"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Novo Serviço" largeTitleDisplayMode="always" id="Bdx-8Z-kKa">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LeN-Q2-61q">
-                            <connections>
-                                <action selector="clicou:" destination="WgK-tW-HDn" id="Bcy-of-2zA"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="datePicker" destination="CiD-6M-sC8" id="H4g-R4-YOt"/>
-                        <outlet property="salvar" destination="LeN-Q2-61q" id="tyk-K9-so3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vye-0B-tCl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3768.8000000000002" y="115.27093596059113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2aZ-fd-eGz">

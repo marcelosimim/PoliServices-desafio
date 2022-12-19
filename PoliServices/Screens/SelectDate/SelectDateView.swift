@@ -1,6 +1,6 @@
 //
 //  
-//  SelectDate2View.swift
+//  SelectDateView.swift
 //  PoliServices
 //
 //  Created by Marcelo Simim Santos on 12/19/22.
@@ -10,11 +10,11 @@
 import Foundation
 import UIKit
 
-protocol SelectDate2ViewProtocol {
+protocol SelectDateViewProtocol {
     func getSelectedDate() -> TimeInterval
 }
 
-final class SelectDate2View: UIView, SelectDate2ViewProtocol {
+final class SelectDateView: UIView, SelectDateViewProtocol {
     private lazy var selectLabel: UILabel = {
         let label = UILabel()
         label.text = "Selecione a data e hora para reservar"
