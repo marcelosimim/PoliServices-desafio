@@ -63,7 +63,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onRequestNewServiceDidTap(_ sender: Any) {
-        performSegue(withIdentifier: "showNewService", sender: nil)
+        let newService = UINavigationController(rootViewController: NewService2ViewController())
+        newService.modalPresentationStyle = .fullScreen
+        present(newService, animated: true)
     }
 
     private func initTimer(){

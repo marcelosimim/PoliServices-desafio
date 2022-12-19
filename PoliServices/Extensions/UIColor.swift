@@ -15,4 +15,8 @@ extension UIColor {
     }
 
     static var background: UIColor { generateColor("background") }
+    static var code: UIColor { .cyan }
+    static var career: UIColor { .green }
+    static var interview: UIColor { .magenta }
+    static var feedback: UIColor { .brown }
 }

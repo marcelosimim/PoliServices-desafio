@@ -21,6 +21,12 @@
 		A30D834A2950A35B00A0C205 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83492950A35B00A0C205 /* UIColor.swift */; };
 		A30D834D2950A8B100A0C205 /* ServiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D834C2950A8B100A0C205 /* ServiceData.swift */; };
 		A30D834F2950A90900A0C205 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D834E2950A90900A0C205 /* Service.swift */; };
+		A30D83542950ABDD00A0C205 /* NewService2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83512950ABDD00A0C205 /* NewService2ViewController.swift */; };
+		A30D83552950ABDD00A0C205 /* NewServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83522950ABDD00A0C205 /* NewServiceView.swift */; };
+		A30D83562950ABDD00A0C205 /* NewServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83532950ABDD00A0C205 /* NewServiceViewModel.swift */; };
+		A30D83592950AE1700A0C205 /* Service2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83582950AE1700A0C205 /* Service2CollectionViewCell.swift */; };
+		A30D835E2950AE6200A0C205 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D835D2950AE6200A0C205 /* ServiceType.swift */; };
+		A30D83602950AEC700A0C205 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D835F2950AEC700A0C205 /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,12 @@
 		A30D83492950A35B00A0C205 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A30D834C2950A8B100A0C205 /* ServiceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceData.swift; sourceTree = "<group>"; };
 		A30D834E2950A90900A0C205 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		A30D83512950ABDD00A0C205 /* NewService2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewService2ViewController.swift; sourceTree = "<group>"; };
+		A30D83522950ABDD00A0C205 /* NewServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewServiceView.swift; sourceTree = "<group>"; };
+		A30D83532950ABDD00A0C205 /* NewServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewServiceViewModel.swift; sourceTree = "<group>"; };
+		A30D83582950AE1700A0C205 /* Service2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service2CollectionViewCell.swift; sourceTree = "<group>"; };
+		A30D835D2950AE6200A0C205 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		A30D835F2950AEC700A0C205 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +84,10 @@
 		4C55034329379F3600699589 /* PoliServices */ = {
 			isa = PBXGroup;
 			children = (
+				A30D835C2950AE5500A0C205 /* Enum */,
 				A30D83392950934000A0C205 /* AppDelegate */,
 				A30D83462950A2A500A0C205 /* Extensions */,
+				A30D83572950ADEB00A0C205 /* Components */,
 				A30D833A2950934D00A0C205 /* Resources */,
 				A30D833B2950936200A0C205 /* Legacy */,
 				A30D834B2950A89300A0C205 /* Model */,
@@ -115,6 +129,7 @@
 		A30D833C295094F700A0C205 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A30D83502950ABB600A0C205 /* NewService */,
 				A30D83452950964600A0C205 /* SelectDate */,
 			);
 			path = Screens;
@@ -134,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				A30D83492950A35B00A0C205 /* UIColor.swift */,
+				A30D835F2950AEC700A0C205 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -145,6 +161,32 @@
 				A30D834E2950A90900A0C205 /* Service.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A30D83502950ABB600A0C205 /* NewService */ = {
+			isa = PBXGroup;
+			children = (
+				A30D83512950ABDD00A0C205 /* NewService2ViewController.swift */,
+				A30D83522950ABDD00A0C205 /* NewServiceView.swift */,
+				A30D83532950ABDD00A0C205 /* NewServiceViewModel.swift */,
+			);
+			path = NewService;
+			sourceTree = "<group>";
+		};
+		A30D83572950ADEB00A0C205 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A30D83582950AE1700A0C205 /* Service2CollectionViewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A30D835C2950AE5500A0C205 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				A30D835D2950AE6200A0C205 /* ServiceType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,17 +261,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A30D83562950ABDD00A0C205 /* NewServiceViewModel.swift in Sources */,
+				A30D835E2950AE6200A0C205 /* ServiceType.swift in Sources */,
 				A30D83442950964100A0C205 /* SelectDateViewModel.swift in Sources */,
 				4C30F0A629390FC6002C3068 /* ServiceCollectionViewCell.swift in Sources */,
+				A30D83542950ABDD00A0C205 /* NewService2ViewController.swift in Sources */,
 				A30D834D2950A8B100A0C205 /* ServiceData.swift in Sources */,
 				A30D83422950964100A0C205 /* SelectDateViewController.swift in Sources */,
 				A30D834F2950A90900A0C205 /* Service.swift in Sources */,
 				A30D83432950964100A0C205 /* SelectDateView.swift in Sources */,
 				4C55034929379F3600699589 /* ViewController.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
+				A30D83592950AE1700A0C205 /* Service2CollectionViewCell.swift in Sources */,
 				4C5503592937D32A00699589 /* NovoServicoViewController.swift in Sources */,
 				4C55034729379F3600699589 /* SceneDelegate.swift in Sources */,
+				A30D83602950AEC700A0C205 /* UIImage.swift in Sources */,
 				A30D834A2950A35B00A0C205 /* UIColor.swift in Sources */,
+				A30D83552950ABDD00A0C205 /* NewServiceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
