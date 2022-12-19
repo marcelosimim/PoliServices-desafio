@@ -63,7 +63,8 @@ class NovoServiceViewController: UIViewController, UICollectionViewDelegate, UIC
         } else if indexPath.row == 3 {
             nome = "Feedback"
         }
-        performSegue(withIdentifier: "dataServico", sender: nil)
+        navigationController?.pushViewController(SelectDate2ViewController(), animated: true)
+        // performSegue(withIdentifier: "dataServico", sender: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
