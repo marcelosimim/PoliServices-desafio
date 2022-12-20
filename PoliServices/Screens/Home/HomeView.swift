@@ -56,26 +56,20 @@ final class HomeView: UIView, HomeViewProtocol {
     }()
 
     private lazy var serviceStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [nextServiceLabel, serviceView, newServiceButton])
+        let stack = UIStackView(arrangedSubviews: [serviceView, newServiceButton])
         stack.axis = .vertical
+        stack.spacing = 22
+        stack.clipsToBounds = true
+        stack.autoresizesSubviews = true
         stack.contentMode = .scaleToFill
-        stack.distribution = .fill
+        stack.distribution = .fillProportionally
         stack.alignment = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
 
-    private lazy var nextServiceLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .bold)
-        label.text = "Próximo Serviço"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-
-    private lazy var serviceView: ServiceView = {
-        let view = ServiceView()
+    private lazy var serviceView: NextServiceView = {
+        let view = NextServiceView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -84,7 +78,6 @@ final class HomeView: UIView, HomeViewProtocol {
         let button = UIButton(configuration: .tinted())
         button.setTitle("Solicitar novo serviço", for: .normal)
         button.configuration?.cornerStyle = .capsule
-        button.heightAnchor.constraint(equalToConstant: 55).isActive = true
         button.addTarget(self, action: #selector(didTapNewService), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -126,7 +119,9 @@ final class HomeView: UIView, HomeViewProtocol {
             serviceStack.topAnchor.constraint(equalTo: separatorLine.bottomAnchor, constant: 32),
             serviceStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
             serviceStack.centerXAnchor.constraint(equalTo: centerXAnchor),
-            serviceStack.heightAnchor.constraint(equalTo: serviceStack.widthAnchor, multiplier: 9/21),
+            // serviceStack.heightAnchor.constraint(equalTo: serviceStack.widthAnchor, multiplier: 9/21),
+
+            newServiceButton.heightAnchor.constraint(equalToConstant: 55),
         ])
     }
 
@@ -137,8 +132,6 @@ final class HomeView: UIView, HomeViewProtocol {
     func setupServiceStack(hasService: Bool) {
         UIView.animate(withDuration: 0.3) { [weak self] in
             guard let self = self else { return }
-            self.nextServiceLabel.alpha = hasService ? 1 : 0
-            self.nextServiceLabel.isHidden = !hasService
             self.serviceView.alpha = hasService ? 1 : 0
             self.serviceView.isHidden = !hasService
             self.newServiceButton.alpha = hasService ? 0 : 1

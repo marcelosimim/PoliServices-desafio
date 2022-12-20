@@ -11,6 +11,14 @@ import Foundation
 import UIKit
 
 final class ServiceView: UIView {
+
+    private lazy var nextServiceLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.text = "Próximo Serviço"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     private lazy var serviceNameLabel: UILabel = {
         let label = UILabel()
@@ -77,6 +85,7 @@ final class ServiceView: UIView {
             dateAndHourLabel.leadingAnchor.constraint(equalTo: serviceDateAndHourLabel.leadingAnchor),
             dateAndHourLabel.trailingAnchor.constraint(equalTo: serviceDateAndHourLabel.trailingAnchor),
 
+            bookImage.topAnchor.constraint(equalTo: serviceNameLabel.bottomAnchor, constant: 27),
             bookImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
             bookImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
             bookImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),

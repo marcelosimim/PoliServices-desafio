@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		4C55034529379F3600699589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55034429379F3600699589 /* AppDelegate.swift */; };
 		4C55034729379F3600699589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55034629379F3600699589 /* SceneDelegate.swift */; };
-		4C55034929379F3600699589 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55034829379F3600699589 /* ViewController.swift */; };
-		4C55034C29379F3600699589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034A29379F3600699589 /* Main.storyboard */; };
 		4C55034E29379F3900699589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034D29379F3900699589 /* Assets.xcassets */; };
 		4C55035129379F3900699589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034F29379F3900699589 /* LaunchScreen.storyboard */; };
 		A30D83422950964100A0C205 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D833F2950964100A0C205 /* SelectDateViewController.swift */; };
@@ -30,14 +28,13 @@
 		A30D83672950CD2500A0C205 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83642950CD2500A0C205 /* HomeViewModel.swift */; };
 		A30D83692950CF7500A0C205 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83682950CF7500A0C205 /* InfoView.swift */; };
 		A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D836B2950D5C300A0C205 /* ServiceView.swift */; };
+		A30D83742950EFF500A0C205 /* NextServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83712950EFF500A0C205 /* NextServiceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C55034129379F3600699589 /* PoliServices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoliServices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C55034429379F3600699589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C55034629379F3600699589 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C55034829379F3600699589 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4C55034B29379F3600699589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C55034D29379F3900699589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C55035029379F3900699589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C55035229379F3900699589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +55,7 @@
 		A30D83642950CD2500A0C205 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A30D83682950CF7500A0C205 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		A30D836B2950D5C300A0C205 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		A30D83712950EFF500A0C205 /* NextServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextServiceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +94,6 @@
 				A30D83462950A2A500A0C205 /* Extensions */,
 				A30D834B2950A89300A0C205 /* Model */,
 				A30D833A2950934D00A0C205 /* Resources */,
-				A30D833B2950936200A0C205 /* Legacy */,
 				A30D833C295094F700A0C205 /* Screens */,
 				4C55035229379F3900699589 /* Info.plist */,
 			);
@@ -119,15 +116,6 @@
 				4C55034F29379F3900699589 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		A30D833B2950936200A0C205 /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				4C55034A29379F3600699589 /* Main.storyboard */,
-				4C55034829379F3600699589 /* ViewController.swift */,
-			);
-			path = Legacy;
 			sourceTree = "<group>";
 		};
 		A30D833C295094F700A0C205 /* Screens */ = {
@@ -184,6 +172,7 @@
 				A30D83582950AE1700A0C205 /* ServiceCollectionViewCell.swift */,
 				A30D83682950CF7500A0C205 /* InfoView.swift */,
 				A30D836B2950D5C300A0C205 /* ServiceView.swift */,
+				A30D83712950EFF500A0C205 /* NextServiceView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -267,7 +256,6 @@
 			files = (
 				4C55035129379F3900699589 /* LaunchScreen.storyboard in Resources */,
 				4C55034E29379F3900699589 /* Assets.xcassets in Resources */,
-				4C55034C29379F3600699589 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,11 +277,11 @@
 				A30D83422950964100A0C205 /* SelectDateViewController.swift in Sources */,
 				A30D834F2950A90900A0C205 /* Service.swift in Sources */,
 				A30D83432950964100A0C205 /* SelectDateView.swift in Sources */,
-				4C55034929379F3600699589 /* ViewController.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
 				A30D83592950AE1700A0C205 /* ServiceCollectionViewCell.swift in Sources */,
 				A30D83652950CD2500A0C205 /* HomeViewController.swift in Sources */,
 				4C55034729379F3600699589 /* SceneDelegate.swift in Sources */,
+				A30D83742950EFF500A0C205 /* NextServiceView.swift in Sources */,
 				A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */,
 				A30D83602950AEC700A0C205 /* UIImage.swift in Sources */,
 				A30D834A2950A35B00A0C205 /* UIColor.swift in Sources */,
@@ -304,14 +292,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4C55034A29379F3600699589 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C55034B29379F3600699589 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4C55034F29379F3900699589 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

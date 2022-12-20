@@ -53,12 +53,7 @@ final class HomeViewModel: HomeViewModelProtocol {
             guard let serviceName = UserDefaults.standard.string(forKey: "service_name") else { return }
             let service = Service(date: TimeInterval(serviceDateInteger), name: serviceName)
             newServiceCompletion(service)
-//            serviceNameLabel.text = serviceName
-//            serviceDateLabel.text = serviceDate.formatted(
-//                date: .numeric,
-//                time: .shortened
-//            )
-        }else{
+        } else {
             UserDefaults.standard.removeObject(forKey: "service_date")
             UserDefaults.standard.removeObject(forKey: "service_name")
             removeServiceCompletion()
