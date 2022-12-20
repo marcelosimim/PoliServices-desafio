@@ -16,13 +16,18 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         customView.delegate = self
         setupView()
-        viewModel.initTimer()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModelBinds()
+        viewModel.initTimer()
         viewModel.setupService()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.deinitTimer()
     }
 
     override func loadView() {
