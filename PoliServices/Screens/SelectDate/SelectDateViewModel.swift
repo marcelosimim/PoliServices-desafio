@@ -9,14 +9,17 @@
 import Foundation
 
 protocol SelectDateViewModelProtocol {
-    func save(_ service: Service, completion: @escaping(() -> ()))
+    var saveServiceCompletion: (() -> Void) { get set }
+
+    func save(_ service: Service)
 }
 
 final class SelectDateViewModel: SelectDateViewModelProtocol {
     private let serviceData = ServiceData()
+    var saveServiceCompletion: (() -> Void) = { }
 
-    func save(_ service: Service, completion: @escaping(() -> ())) {
+    func save(_ service: Service) {
         serviceData.saveService(service)
-        completion()
+        saveServiceCompletion()
     }
 }

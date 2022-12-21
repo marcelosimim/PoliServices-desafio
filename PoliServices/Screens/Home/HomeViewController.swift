@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
     }
 
     private func viewModelBinds() {
-        viewModel.newServiceCompletion = { [weak self] service in
+        viewModel.showServiceCompletion = { [weak self] service in
             guard let self = self else { return }
             self.customView.setupService(service)
         }

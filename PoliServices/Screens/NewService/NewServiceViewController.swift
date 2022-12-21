@@ -38,8 +38,7 @@ class NewServiceViewController: UIViewController {
         dismiss(animated: true)
     }
 
-    private func goToSelectDate() {
-        guard let serviceName = serviceName else { return }
+    private func goToSelectDate(serviceName: String) {
          navigationController?.pushViewController(SelectDateViewController(servico: serviceName), animated: true)
     }
 }
@@ -61,8 +60,7 @@ extension NewServiceViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? ServiceCollectionViewCell, let type = cell.type else { fatalError() }
-        serviceName = type.title
-        goToSelectDate()
+        let serviceName = viewModel.services[indexPath.row].title
+        goToSelectDate(serviceName: serviceName)
     }
 }

@@ -25,6 +25,7 @@ class SelectDateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        viewModelBinds()
     }
 
     override func loadView() {
@@ -37,12 +38,15 @@ class SelectDateViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(didTapSave))
     }
 
+    private func viewModelBinds() {
+        viewModel.saveServiceCompletion = { [weak self] in
+            guard let self = self else { return }
+            self.dismiss(animated: true)}
+    }
+
     @objc private func didTapSave() {
         let selectedDate = customView.getSelectedDate()
         let service = Service(date: selectedDate, name: serviceName)
-        viewModel.save(service) { [weak self] in
-            guard let self = self else { return }
-            self.dismiss(animated: true)
-        }
+        viewModel.save(service)
     }
 }

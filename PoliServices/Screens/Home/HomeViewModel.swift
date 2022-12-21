@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HomeViewModelProtocol {
-    var newServiceCompletion: ((Service) -> Void) { get set }
+    var showServiceCompletion: ((Service) -> Void) { get set }
     var removeServiceCompletion: (() -> Void) { get set }
 
     func getCurrentDate() -> String
@@ -19,7 +19,7 @@ protocol HomeViewModelProtocol {
 }
 
 final class HomeViewModel: HomeViewModelProtocol {
-    var newServiceCompletion: ((Service) -> Void) = { _ in }
+    var showServiceCompletion: ((Service) -> Void) = { _ in }
     var removeServiceCompletion: (() -> Void) = { }
 
     private var timer: Timer?
@@ -47,8 +47,7 @@ final class HomeViewModel: HomeViewModelProtocol {
     func setupService() {
         if hasService() {
             guard let service = serviceData.getService() else { return }
-            serviceData.saveService(service)
-            newServiceCompletion(service)
+            showServiceCompletion(service)
         } else {
             serviceData.removeService()
             deinitTimer()
