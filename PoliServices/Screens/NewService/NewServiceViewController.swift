@@ -17,6 +17,8 @@ class NewServiceViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupCollectionView()
+        viewModelBinds()
+        viewModel.fetchServices()
     }
 
     override func loadView() {
@@ -41,6 +43,15 @@ class NewServiceViewController: UIViewController {
     private func goToSelectDate(serviceName: String) {
          navigationController?.pushViewController(SelectDateViewController(servico: serviceName), animated: true)
     }
+
+    private func viewModelBinds() {
+        viewModel.didFinishFetchingServices = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.customView.serviceCollectionView.reloadData()
+            }
+        }
+    }
 }
 
 extension NewServiceViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -60,7 +71,7 @@ extension NewServiceViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let serviceName = viewModel.services[indexPath.row].title
+        let serviceName = viewModel.services[indexPath.row].name
         goToSelectDate(serviceName: serviceName)
     }
 }
