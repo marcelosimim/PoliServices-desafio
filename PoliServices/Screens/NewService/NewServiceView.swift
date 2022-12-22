@@ -19,7 +19,7 @@ protocol NewServiceViewProtocol {
 final class NewServiceView: UIView, NewServiceViewProtocol {
     lazy var serviceCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 150, height: 150)
+        layout.itemSize = CGSize(width: 150, height: 160)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 22)
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.register(ServiceCollectionViewCell.self, forCellWithReuseIdentifier: ServiceCollectionViewCell.identifier)

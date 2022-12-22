@@ -23,6 +23,13 @@ struct ServiceCellModel {
         UIColor.hexStringToUIColor(hex: color)
     }
 
+    func getDuration() -> String {
+        let hours = duration/60
+        let minutes = duration%60
+
+        return "\(Time.formattedTimeDigits(hours)):\(Time.formattedTimeDigits(minutes))h"
+    }
+
     static func fromServiceAPIModel(_ model: ServiceAPIModel) -> ServiceCellModel? {
         guard let type = ServiceType(rawValue: model.id) else { return nil }
         return ServiceCellModel(icon: model.icon, color: model.color, type: type, name: model.name, duration: model.duration)

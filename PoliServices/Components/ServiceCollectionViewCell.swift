@@ -19,12 +19,22 @@ class ServiceCollectionViewCell: UICollectionViewCell {
         return image
     }()
 
-    private lazy var serviceLabel: UILabel = {
+    private lazy var serviceNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var serviceDurationLabel: UILabel = {
+        let label = UILabel()
+        // label.text = "0:30h"
+        label.font = .systemFont(ofSize: 14, weight: .bold)
+        label.textAlignment = .center
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -38,7 +48,8 @@ class ServiceCollectionViewCell: UICollectionViewCell {
 
     private func addViews() {
         addSubview(serviceImage)
-        addSubview(serviceLabel)
+        addSubview(serviceNameLabel)
+        addSubview(serviceDurationLabel)
         setupConstraints()
     }
 
@@ -46,19 +57,24 @@ class ServiceCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             serviceImage.topAnchor.constraint(equalTo: topAnchor, constant: 22),
             serviceImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            serviceImage.heightAnchor.constraint(equalToConstant: 60),
+            serviceImage.heightAnchor.constraint(equalToConstant: 50),
 
-            serviceLabel.topAnchor.constraint(equalTo: serviceImage.bottomAnchor, constant: 12),
-            serviceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            serviceLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            serviceLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
+            serviceNameLabel.topAnchor.constraint(equalTo: serviceImage.bottomAnchor, constant: 12),
+            serviceNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            serviceNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+
+            serviceDurationLabel.topAnchor.constraint(equalTo: serviceNameLabel.bottomAnchor, constant: 4),
+            serviceDurationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            serviceDurationLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            serviceDurationLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
         ])
     }
 
     func configure(_ model: ServiceCellModel) {
         serviceImage.image = model.getImage()
         serviceImage.tintColor = model.getColor()
-        serviceLabel.text = model.name
+        serviceNameLabel.text = model.name
+        serviceDurationLabel.text = model.getDuration()
     }
 }
 

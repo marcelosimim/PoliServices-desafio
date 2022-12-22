@@ -34,9 +34,10 @@ final class SelectDateViewModel: SelectDateViewModelProtocol {
     }
 
     private func calculateEndTime(duration: Int, hour: Int, minute: Int) {
-        let endHour = hour + hoursToAdd(minute: minute, duration: duration)
-        let endMinute = defineEndMinutes(minute: minute, duration: duration)
-        let endTime = formattedHour(endHour) + ":" + formattedTime(endMinute)
+        let time = Time(hour: hour, minute: minute)
+        let endHour = time.addToHour(duration: duration)
+        let endMinute = time.addToMinute(duration: duration)
+        let endTime = time.formattedTime(hour: endHour, minute: endMinute)
 
         didFinishCalculationEndTime(endTime)
     }
@@ -44,25 +45,5 @@ final class SelectDateViewModel: SelectDateViewModelProtocol {
     func save(_ service: Service) {
         serviceData.saveService(service)
         saveServiceCompletion()
-    }
-
-    private func defineEndMinutes(minute: Int, duration: Int) -> Int {
-        let addingDuration = minute + duration
-        return addingDuration%60
-    }
-
-    private func hoursToAdd(minute: Int, duration: Int) -> Int {
-        let addingDuration = minute + duration
-        return Int(addingDuration/60)
-    }
-
-    private func formattedTime(_ value: Int) -> String {
-        if value < 10 { return "0\(value)"}
-        else { return "\(value)" }
-    }
-
-    private func formattedHour(_ value: Int) -> String {
-        if value >= 24 { return formattedTime(value-24) }
-        else { return formattedTime(value) }
     }
 }
