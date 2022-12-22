@@ -10,7 +10,8 @@ import Foundation
 
 protocol NewServiceViewModelProtocol {
     var services: [ServiceCellModel] { get }
-    var didFinishFetchingServices: (() -> ()) { get set }
+    var didFinishFetchingServicesSuccess: (() -> ()) { get set }
+    var didFinishFetchingServicesFailure: ((String) -> ()) { get set }
 
     func fetchServices()
 }
@@ -18,16 +19,16 @@ protocol NewServiceViewModelProtocol {
 final class NewServiceViewModel: NewServiceViewModelProtocol {
     private let serviceAPI = ServiceAPI()
     var services: [ServiceCellModel] = []
-    var didFinishFetchingServices: (() -> ()) = { }
+    var didFinishFetchingServicesSuccess: (() -> ()) = { }
+    var didFinishFetchingServicesFailure: ((String) -> ()) = { _ in }
 
     func fetchServices() {
         serviceAPI.fetchServices { [weak self] result in
             switch result {
             case .success(let services):
                 self?.updateServices(services)
-                print(services)
             case .failure(let failure):
-                print(failure)
+                self?.didFinishFetchingServicesFailure(failure.localizedDescription)
             }
         }
     }
@@ -35,12 +36,11 @@ final class NewServiceViewModel: NewServiceViewModelProtocol {
     private func updateServices(_ result: ServiceAPIResult) {
         for service in result.data {
             guard let cellModel = ServiceCellModel.fromServiceAPIModel(service) else {
-                print("ue", service.id, service.name)
                 return
             }
             self.services.append(cellModel)
         }
 
-        didFinishFetchingServices()
+        didFinishFetchingServicesSuccess()
     }
 }

@@ -44,12 +44,27 @@ class NewServiceViewController: UIViewController {
          navigationController?.pushViewController(SelectDateViewController(servico: serviceName), animated: true)
     }
 
+    private func showError(_ message: String) {
+        let alert = UIAlertController(title: "Erro ao obter serviços", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Tente novamente mais tarde", style: .cancel) { [weak self] _ in
+            guard let self = self else { return }
+            self.dismiss(animated: true)
+        }
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+
     private func viewModelBinds() {
-        viewModel.didFinishFetchingServices = { [weak self] in
+        viewModel.didFinishFetchingServicesSuccess = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                self.customView.serviceCollectionView.reloadData()
+                self.customView.didFinishFetchingServices()
             }
+        }
+
+        viewModel.didFinishFetchingServicesFailure = { [weak self] message in
+            guard let self = self else { return }
+            self.showError(message)
         }
     }
 }
