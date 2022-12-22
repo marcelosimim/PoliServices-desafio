@@ -12,9 +12,11 @@ class SelectDateViewController: UIViewController {
     private lazy var customView: SelectDateViewProtocol = SelectDateView()
     private lazy var viewModel: SelectDateViewModelProtocol = SelectDateViewModel()
     private let serviceName: String
+    private let serviceDuration: Int
 
-    init(servico: String) {
-        self.serviceName = servico
+    init(serviceName: String, serviceDuration: Int) {
+        self.serviceName = serviceName
+        self.serviceDuration = serviceDuration
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -24,8 +26,10 @@ class SelectDateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        customView.delegate = self
         setupNavigationBar()
         viewModelBinds()
+        viewModel.setupEndTime(duration: serviceDuration)
     }
 
     override func loadView() {
@@ -41,12 +45,24 @@ class SelectDateViewController: UIViewController {
     private func viewModelBinds() {
         viewModel.saveServiceCompletion = { [weak self] in
             guard let self = self else { return }
-            self.dismiss(animated: true)}
+            self.dismiss(animated: true)
+        }
+
+        viewModel.didFinishCalculationEndTime = { [weak self] endTime in
+            guard let self = self else { return }
+            self.customView.setEndTime(endTime)
+        }
     }
 
     @objc private func didTapSave() {
         let selectedDate = customView.getSelectedDate()
         let service = Service(date: selectedDate, name: serviceName)
         viewModel.save(service)
+    }
+}
+
+extension SelectDateViewController: SelectDateViewDelegate {
+    func recalculateEndTime(hour: Int, minute: Int) {
+        viewModel.recalculateEndTime(duration: serviceDuration, hour: hour, minute: minute)
     }
 }

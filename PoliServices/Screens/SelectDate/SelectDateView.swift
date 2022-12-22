@@ -10,8 +10,15 @@
 import Foundation
 import UIKit
 
+protocol SelectDateViewDelegate: AnyObject {
+    func recalculateEndTime(hour: Int, minute: Int)
+}
+
 protocol SelectDateViewProtocol {
+    var delegate: SelectDateViewDelegate? { get set }
+
     func getSelectedDate() -> TimeInterval
+    func setEndTime(_ hour: String)
 }
 
 final class SelectDateView: UIView, SelectDateViewProtocol {
@@ -33,9 +40,35 @@ final class SelectDateView: UIView, SelectDateViewProtocol {
         datePicker.minimumDate = .now
         datePicker.contentMode = .scaleToFill
         datePicker.date = Calendar.current.date(byAdding: .minute, value: 1, to: Date()) ?? Date()
+        datePicker.addTarget(self, action: #selector(didChangeDateValue), for: .valueChanged)
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         return datePicker
     }()
+
+    private lazy var endLabel: UILabel = {
+        let label = UILabel()
+        label.text = "End"
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var endHourView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 8
+        view.backgroundColor = .tertiarySystemFill
+        view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private lazy var endHourLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    var delegate: SelectDateViewDelegate?
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -46,6 +79,9 @@ final class SelectDateView: UIView, SelectDateViewProtocol {
     private func addViews() {
         addSubview(selectLabel)
         addSubview(datePicker)
+        addSubview(endLabel)
+        addSubview(endHourView)
+        endHourView.addSubview(endHourLabel)
         setupConstraints()
     }
 
@@ -58,10 +94,33 @@ final class SelectDateView: UIView, SelectDateViewProtocol {
             datePicker.topAnchor.constraint(equalTo: selectLabel.bottomAnchor, constant: 32),
             datePicker.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             datePicker.centerXAnchor.constraint(equalTo: centerXAnchor),
+
+            endHourView.topAnchor.constraint(equalTo: datePicker.bottomAnchor),
+            endHourView.trailingAnchor.constraint(equalTo: datePicker.trailingAnchor, constant: -8),
+            endHourView.widthAnchor.constraint(equalToConstant: 70),
+
+            endHourLabel.topAnchor.constraint(equalTo: endHourView.topAnchor, constant: 7),
+            endHourLabel.centerYAnchor.constraint(equalTo: endHourView.centerYAnchor),
+            endHourLabel.centerXAnchor.constraint(equalTo: endHourView.centerXAnchor),
+
+            endLabel.leadingAnchor.constraint(equalTo: datePicker.leadingAnchor, constant: 8),
+            endLabel.centerYAnchor.constraint(equalTo: endHourView.centerYAnchor),
         ])
+    }
+
+    @objc private func didChangeDateValue() {
+        let hour = Calendar.current.component(.hour, from: datePicker.date)
+        let minute = Calendar.current.component(.minute, from: datePicker.date)
+
+        delegate?.recalculateEndTime(hour: hour, minute: minute)
     }
 
     func getSelectedDate() -> TimeInterval {
         datePicker.date.timeIntervalSince1970
+    }
+
+    func setEndTime(_ hour: String) {
+        endHourView.isHidden = false
+        endHourLabel.text = hour
     }
 }
