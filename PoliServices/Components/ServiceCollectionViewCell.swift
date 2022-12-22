@@ -11,7 +11,6 @@ import UIKit
 
 class ServiceCollectionViewCell: UICollectionViewCell {
     static let identifier = "\(ServiceCollectionViewCell.self)"
-    var type: ServiceType?
 
     private lazy var serviceImage: UIImageView = {
         let image = UIImageView()
@@ -24,6 +23,8 @@ class ServiceCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textAlignment = .center
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -54,11 +55,10 @@ class ServiceCollectionViewCell: UICollectionViewCell {
         ])
     }
 
-    func configure(_ model: ServiceType) {
-        self.type = model
-        serviceImage.image = model.image
-        serviceImage.tintColor = model.color
-        serviceLabel.text = model.title
+    func configure(_ model: ServiceCellModel) {
+        serviceImage.image = model.getImage()
+        serviceImage.tintColor = model.getColor()
+        serviceLabel.text = model.name
     }
 }
 

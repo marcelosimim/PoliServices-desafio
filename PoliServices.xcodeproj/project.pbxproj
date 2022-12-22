@@ -29,6 +29,10 @@
 		A30D83692950CF7500A0C205 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83682950CF7500A0C205 /* InfoView.swift */; };
 		A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D836B2950D5C300A0C205 /* ServiceView.swift */; };
 		A30D83742950EFF500A0C205 /* NextServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83712950EFF500A0C205 /* NextServiceView.swift */; };
+		A364A8D92954BE40007B803E /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8D82954BE40007B803E /* ServiceAPI.swift */; };
+		A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */; };
+		A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */; };
+		A364A8E22954CA70007B803E /* ServiceCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8E12954CA70007B803E /* ServiceCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +60,10 @@
 		A30D83682950CF7500A0C205 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		A30D836B2950D5C300A0C205 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		A30D83712950EFF500A0C205 /* NextServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextServiceView.swift; sourceTree = "<group>"; };
+		A364A8D82954BE40007B803E /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
+		A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIModel.swift; sourceTree = "<group>"; };
+		A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIResult.swift; sourceTree = "<group>"; };
+		A364A8E12954CA70007B803E /* ServiceCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,7 @@
 				A30D835C2950AE5500A0C205 /* Enum */,
 				A30D83462950A2A500A0C205 /* Extensions */,
 				A30D834B2950A89300A0C205 /* Model */,
+				A364A8D72954BDFF007B803E /* Network */,
 				A30D833A2950934D00A0C205 /* Resources */,
 				A30D833C295094F700A0C205 /* Screens */,
 				4C55035229379F3900699589 /* Info.plist */,
@@ -152,6 +161,7 @@
 			children = (
 				A30D834C2950A8B100A0C205 /* ServiceData.swift */,
 				A30D834E2950A90900A0C205 /* Service.swift */,
+				A364A8E12954CA70007B803E /* ServiceCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +203,24 @@
 				A30D83642950CD2500A0C205 /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A364A8D72954BDFF007B803E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A364A8DC2954C3AD007B803E /* Model */,
+				A364A8D82954BE40007B803E /* ServiceAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A364A8DC2954C3AD007B803E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */,
+				A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,17 +294,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */,
 				A30D83562950ABDD00A0C205 /* NewServiceViewModel.swift in Sources */,
 				A30D83672950CD2500A0C205 /* HomeViewModel.swift in Sources */,
+				A364A8E22954CA70007B803E /* ServiceCellModel.swift in Sources */,
 				A30D835E2950AE6200A0C205 /* ServiceType.swift in Sources */,
 				A30D83442950964100A0C205 /* SelectDateViewModel.swift in Sources */,
 				A30D83542950ABDD00A0C205 /* NewServiceViewController.swift in Sources */,
 				A30D834D2950A8B100A0C205 /* ServiceData.swift in Sources */,
 				A30D83692950CF7500A0C205 /* InfoView.swift in Sources */,
+				A364A8D92954BE40007B803E /* ServiceAPI.swift in Sources */,
 				A30D83662950CD2500A0C205 /* HomeView.swift in Sources */,
 				A30D83422950964100A0C205 /* SelectDateViewController.swift in Sources */,
 				A30D834F2950A90900A0C205 /* Service.swift in Sources */,
 				A30D83432950964100A0C205 /* SelectDateView.swift in Sources */,
+				A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
 				A30D83592950AE1700A0C205 /* ServiceCollectionViewCell.swift in Sources */,
 				A30D83652950CD2500A0C205 /* HomeViewController.swift in Sources */,

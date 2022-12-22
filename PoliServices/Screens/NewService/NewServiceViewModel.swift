@@ -9,9 +9,38 @@
 import Foundation
 
 protocol NewServiceViewModelProtocol {
-    var services: [ServiceType] { get }
+    var services: [ServiceCellModel] { get }
+    var didFinishFetchingServices: (() -> ()) { get set }
+
+    func fetchServices()
 }
 
 final class NewServiceViewModel: NewServiceViewModelProtocol {
-    var services: [ServiceType] = [.code, .career, .interview, .feedback]
+    private let serviceAPI = ServiceAPI()
+    var services: [ServiceCellModel] = []
+    var didFinishFetchingServices: (() -> ()) = { }
+
+    func fetchServices() {
+        serviceAPI.fetchServices { [weak self] result in
+            switch result {
+            case .success(let services):
+                self?.updateServices(services)
+                print(services)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
+
+    private func updateServices(_ result: ServiceAPIResult) {
+        for service in result.data {
+            guard let cellModel = ServiceCellModel.fromServiceAPIModel(service) else {
+                print("ue", service.id, service.name)
+                return
+            }
+            self.services.append(cellModel)
+        }
+
+        didFinishFetchingServices()
+    }
 }
