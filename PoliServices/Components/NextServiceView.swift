@@ -23,7 +23,6 @@ final class NextServiceView: UIView {
     private lazy var countdownLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.text = "Faltam blablalla"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

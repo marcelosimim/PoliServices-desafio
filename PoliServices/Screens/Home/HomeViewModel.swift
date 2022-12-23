@@ -27,6 +27,7 @@ final class HomeViewModel: HomeViewModelProtocol {
 
     private var timer: Timer?
     private let serviceData = ServiceData()
+    private var countdownIsZero = false
 
     func getCurrentDate() -> String {
         let currentDate = Date()
@@ -57,6 +58,7 @@ final class HomeViewModel: HomeViewModelProtocol {
             calculateCountdown(start: service.startDate)
             showServiceCompletion(service)
         } else {
+            countdownIsZero = false
             serviceData.removeService()
             deinitTimer()
             removeServiceCompletion()
@@ -64,10 +66,16 @@ final class HomeViewModel: HomeViewModelProtocol {
     }
 
     private func calculateCountdown(start: TimeInterval) {
+        if countdownIsZero {
+            countdownCompletion(Time(days: 0, hours: 0, minutes: 0))
+            return
+        }
+
         let currentDate = Date()
         let startDate = Date(timeIntervalSince1970: start)
         let timeLeft = currentDate-startDate
         guard let timeLeft = timeLeft.minute else { return }
+        countdownIsZero = timeLeft == 0
         calculateTime(timeLeft)
     }
 
