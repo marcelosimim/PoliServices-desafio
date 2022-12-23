@@ -19,6 +19,7 @@ protocol HomeViewProtocol {
     func setupServiceStack(hasService: Bool)
     func setupService(_ service: Service)
     func setupCurrentDate(_ date: String)
+    func setupTotalOfServices(_ total: Int)
 }
 
 final class HomeView: UIView, HomeViewProtocol {
@@ -53,6 +54,13 @@ final class HomeView: UIView, HomeViewProtocol {
         view.backgroundColor = .systemIndigo
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }()
+
+    private lazy var totalOfServicesLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     private lazy var serviceStack: UIStackView = {
@@ -94,6 +102,7 @@ final class HomeView: UIView, HomeViewProtocol {
         addSubview(dateLabel)
         addSubview(infoView)
         addSubview(separatorLine)
+        addSubview(totalOfServicesLabel)
         addSubview(serviceStack)
         setupConstraints()
     }
@@ -116,7 +125,11 @@ final class HomeView: UIView, HomeViewProtocol {
             separatorLine.centerXAnchor.constraint(equalTo: centerXAnchor),
             separatorLine.heightAnchor.constraint(equalToConstant: 1),
 
-            serviceStack.topAnchor.constraint(equalTo: separatorLine.bottomAnchor, constant: 32),
+            totalOfServicesLabel.topAnchor.constraint(equalTo: separatorLine.bottomAnchor, constant: 16),
+            totalOfServicesLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
+            totalOfServicesLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+
+            serviceStack.topAnchor.constraint(equalTo: totalOfServicesLabel.bottomAnchor, constant: 16),
             serviceStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
             serviceStack.centerXAnchor.constraint(equalTo: centerXAnchor),
 
@@ -140,6 +153,15 @@ final class HomeView: UIView, HomeViewProtocol {
 
     func setupCurrentDate(_ date: String) {
         dateLabel.text = date
+    }
+
+    func setupTotalOfServices(_ total: Int) {
+        let attrs = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .bold)]
+        let text = NSMutableAttributedString(string: "Total de serviços já solicitados: ", attributes:attrs)
+        let total = NSMutableAttributedString(string: "\(total)")
+
+        text.append(total)
+        totalOfServicesLabel.attributedText = text
     }
 
     func setupService(_ service: Service) {

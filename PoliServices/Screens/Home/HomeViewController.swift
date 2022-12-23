@@ -15,11 +15,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customView.delegate = self
-        setupView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupView()
         viewModelBinds()
         viewModel.initTimer()
         viewModel.setupService()
@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
 
     private func setupView() {
         customView.setupCurrentDate(viewModel.getCurrentDate())
+        customView.setupTotalOfServices(viewModel.getTotalOfServices())
     }
 
     private func viewModelBinds() {

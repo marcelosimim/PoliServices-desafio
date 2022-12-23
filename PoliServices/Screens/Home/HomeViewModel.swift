@@ -13,6 +13,7 @@ protocol HomeViewModelProtocol {
     var removeServiceCompletion: (() -> Void) { get set }
 
     func getCurrentDate() -> String
+    func getTotalOfServices() -> Int
     func initTimer()
     func deinitTimer()
     func setupService()
@@ -31,6 +32,10 @@ final class HomeViewModel: HomeViewModelProtocol {
             date: .long,
             time: .omitted
         )
+    }
+
+    func getTotalOfServices() -> Int {
+        serviceData.getTotalOfServices()
     }
 
     func initTimer() {
