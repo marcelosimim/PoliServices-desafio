@@ -10,16 +10,14 @@
 import Foundation
 
 struct ServiceData {
-    private let dateStartKey = "service_date"
-    private let dateEndKey = "service_date_end"
-    private let nameKey = "service_name"
+    private let serviceKey = "service"
     private let totalOfServices = "total_of_services"
 
     func saveService(_ service: Service) {
-        UserDefaults.standard.set(service.startDate, forKey: dateStartKey)
-        UserDefaults.standard.set(service.endDate, forKey: dateEndKey)
-        UserDefaults.standard.set(service.name, forKey: nameKey)
-        updateTotalOfServices()
+        if let encoded = try? JSONEncoder().encode(service) {
+            UserDefaults.standard.set(encoded, forKey: serviceKey)
+            updateTotalOfServices()
+        }
     }
 
     func updateTotalOfServices() {
@@ -28,21 +26,7 @@ struct ServiceData {
     }
 
     func removeService() {
-        UserDefaults.standard.removeObject(forKey: dateStartKey)
-        UserDefaults.standard.removeObject(forKey:nameKey)
-        UserDefaults.standard.removeObject(forKey: dateEndKey)
-    }
-
-    func getServiceDateBegin() -> TimeInterval {
-        TimeInterval(UserDefaults.standard.integer(forKey: dateStartKey))
-    }
-
-    func getServiceDateEnd() -> TimeInterval {
-        TimeInterval(UserDefaults.standard.integer(forKey: dateEndKey))
-    }
-
-    func getServiceName() -> String {
-        UserDefaults.standard.string(forKey: "service_name") ?? ""
+        UserDefaults.standard.removeObject(forKey: serviceKey)
     }
 
     func getTotalOfServices() -> Int {
@@ -50,10 +34,21 @@ struct ServiceData {
     }
 
     func getService() -> Service? {
-        let name = getServiceName()
-        let begin = getServiceDateBegin()
-        let end = getServiceDateEnd()
-        return Service(startDate: begin, endDate: end, name: name)
+        if let data = UserDefaults.standard.object(forKey: serviceKey) as? Data,
+           let service = try? JSONDecoder().decode(Service.self, from: data) {
+            return service
+        }
+        return nil
+    }
+
+    func getServiceDateBegin() -> TimeInterval {
+        let service = UserDefaults.standard.object(forKey: serviceKey) as! Service
+        return service.startDate
+    }
+
+    func getServiceDateEnd() -> TimeInterval {
+        let service = UserDefaults.standard.object(forKey: serviceKey) as! Service
+        return service.endDate
     }
 }
 

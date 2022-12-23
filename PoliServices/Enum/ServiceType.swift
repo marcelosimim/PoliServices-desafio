@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum ServiceType: Int {
+enum ServiceType: Int, Codable {
     case code = 1
     case career = 2
     case interview = 3

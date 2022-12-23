@@ -64,9 +64,8 @@ final class ServiceView: UIView {
         return label
     }()
 
-    private lazy var bookImage: UIImageView = {
+    private lazy var serviceImage: UIImageView = {
         let image = UIImageView()
-        image.image = .book
         image.tintColor = .white
         image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +74,6 @@ final class ServiceView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = .systemTeal
         layer.cornerRadius = 12
         addViews()
     }
@@ -86,7 +84,7 @@ final class ServiceView: UIView {
         addSubview(startDateLabel)
         addSubview(endLabel)
         addSubview(endDateLabel)
-        addSubview(bookImage)
+        addSubview(serviceImage)
         setupConstraints()
     }
 
@@ -98,7 +96,7 @@ final class ServiceView: UIView {
 
             endDateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             endDateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            endDateLabel.trailingAnchor.constraint(equalTo: bookImage.leadingAnchor, constant: 16),
+            endDateLabel.trailingAnchor.constraint(equalTo: serviceImage.leadingAnchor, constant: 16),
 
             endLabel.bottomAnchor.constraint(equalTo: endDateLabel.topAnchor, constant: -4),
             endLabel.leadingAnchor.constraint(equalTo: endDateLabel.leadingAnchor),
@@ -106,23 +104,25 @@ final class ServiceView: UIView {
 
             startDateLabel.bottomAnchor.constraint(equalTo: endLabel.topAnchor, constant: -4),
             startDateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            startDateLabel.trailingAnchor.constraint(equalTo: bookImage.leadingAnchor, constant: 16),
+            startDateLabel.trailingAnchor.constraint(equalTo: serviceImage.leadingAnchor, constant: 16),
 
             startLabel.bottomAnchor.constraint(equalTo: startDateLabel.topAnchor, constant: -4),
             startLabel.leadingAnchor.constraint(equalTo: startDateLabel.leadingAnchor),
 
-            bookImage.topAnchor.constraint(equalTo: serviceNameLabel.bottomAnchor, constant: 27),
-            bookImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
-            bookImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
-            bookImage.heightAnchor.constraint(equalToConstant: 70),
-            bookImage.widthAnchor.constraint(equalTo: bookImage.heightAnchor)
+            serviceImage.topAnchor.constraint(equalTo: serviceNameLabel.bottomAnchor, constant: 27),
+            serviceImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
+            serviceImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
+            serviceImage.heightAnchor.constraint(equalToConstant: 70),
+            serviceImage.widthAnchor.constraint(equalTo: serviceImage.heightAnchor)
         ])
     }
 
     func setupService(_ service: Service) {
         startDateLabel.text = formatDate(service.startDate)
         endDateLabel.text = formatDate(service.endDate)
-        serviceNameLabel.text = service.name
+        serviceNameLabel.text = service.layout.name
+        backgroundColor = service.layout.getColor()
+        serviceImage.image = service.layout.getImage()
     }
 
     private func formatDate(_ timeInterval: TimeInterval) -> String {

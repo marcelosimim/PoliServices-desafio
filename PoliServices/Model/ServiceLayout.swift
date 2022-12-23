@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-struct ServiceCellModel {
-    private let icon: String
-    private let color: String
+struct ServiceLayout: Codable {
+    let icon: String
+    let color: String
     let type: ServiceType
     let name: String
     let duration: Int
@@ -30,8 +30,8 @@ struct ServiceCellModel {
         return "\(hours.formattedTimeDigits()):\(minutes.formattedTimeDigits())h"
     }
 
-    static func fromServiceAPIModel(_ model: ServiceAPIModel) -> ServiceCellModel? {
+    static func fromServiceAPIModel(_ model: ServiceAPIModel) -> ServiceLayout? {
         guard let type = ServiceType(rawValue: model.id) else { return nil }
-        return ServiceCellModel(icon: model.icon, color: model.color, type: type, name: model.name, duration: model.duration)
+        return ServiceLayout(icon: model.icon, color: model.color, type: type, name: model.name, duration: model.duration)
     }
 }

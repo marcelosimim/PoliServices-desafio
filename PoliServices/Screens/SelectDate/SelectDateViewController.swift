@@ -11,12 +11,10 @@ import UIKit
 class SelectDateViewController: UIViewController {
     private lazy var customView: SelectDateViewProtocol = SelectDateView()
     private lazy var viewModel: SelectDateViewModelProtocol = SelectDateViewModel()
-    private let serviceName: String
-    private let serviceDuration: Int
+    private let service: ServiceLayout
 
-    init(serviceName: String, serviceDuration: Int) {
-        self.serviceName = serviceName
-        self.serviceDuration = serviceDuration
+    init(service: ServiceLayout) {
+        self.service = service
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -56,13 +54,13 @@ class SelectDateViewController: UIViewController {
     @objc private func didTapSave() {
         guard let endDate = viewModel.endDate else { return }
         let selectedDate = customView.getSelectedDate()
-        let service = Service(startDate: selectedDate, endDate: endDate, name: serviceName)
+        let service = Service(startDate: selectedDate, endDate: endDate, layout: service)
         viewModel.save(service)
     }
 }
 
 extension SelectDateViewController: SelectDateViewDelegate {
     func calculateEndTime(date: Date) {
-        viewModel.setupEndTime(selectedDate: date, duration: serviceDuration)
+        viewModel.setupEndTime(selectedDate: date, duration: service.duration)
     }
 }

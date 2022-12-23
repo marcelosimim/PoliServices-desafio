@@ -9,9 +9,9 @@
 
 import Foundation
 
-struct Service {
+struct Service: Codable {
     let startDate: TimeInterval
     let endDate: TimeInterval
-    let name: String
+    let layout: ServiceLayout
 }
 

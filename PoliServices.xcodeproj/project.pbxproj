@@ -32,7 +32,7 @@
 		A364A8D92954BE40007B803E /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8D82954BE40007B803E /* ServiceAPI.swift */; };
 		A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */; };
 		A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */; };
-		A364A8E22954CA70007B803E /* ServiceCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8E12954CA70007B803E /* ServiceCellModel.swift */; };
+		A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8E12954CA70007B803E /* ServiceLayout.swift */; };
 		A38D249F2955E60500B06DF0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D249E2955E60500B06DF0 /* Int.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,7 @@
 		A364A8D82954BE40007B803E /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
 		A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIModel.swift; sourceTree = "<group>"; };
 		A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIResult.swift; sourceTree = "<group>"; };
-		A364A8E12954CA70007B803E /* ServiceCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellModel.swift; sourceTree = "<group>"; };
+		A364A8E12954CA70007B803E /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
 		A38D249E2955E60500B06DF0 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,7 +164,7 @@
 			children = (
 				A30D834C2950A8B100A0C205 /* ServiceData.swift */,
 				A30D834E2950A90900A0C205 /* Service.swift */,
-				A364A8E12954CA70007B803E /* ServiceCellModel.swift */,
+				A364A8E12954CA70007B803E /* ServiceLayout.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 				A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */,
 				A30D83562950ABDD00A0C205 /* NewServiceViewModel.swift in Sources */,
 				A30D83672950CD2500A0C205 /* HomeViewModel.swift in Sources */,
-				A364A8E22954CA70007B803E /* ServiceCellModel.swift in Sources */,
+				A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */,
 				A30D835E2950AE6200A0C205 /* ServiceType.swift in Sources */,
 				A30D83442950964100A0C205 /* SelectDateViewModel.swift in Sources */,
 				A30D83542950ABDD00A0C205 /* NewServiceViewController.swift in Sources */,

@@ -75,7 +75,8 @@ final class HomeViewModel: HomeViewModelProtocol {
     }
 
     private func hasService() -> Bool {
-        let serviceDateInteger = serviceData.getServiceDateEnd()
+        guard let service = serviceData.getService() else { return false }
+        let serviceDateInteger = service.endDate
         let serviceDate = Date(timeIntervalSince1970: TimeInterval(serviceDateInteger))
         let currentDate = Date()
         return serviceDate >= currentDate

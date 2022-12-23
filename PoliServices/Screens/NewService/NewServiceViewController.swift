@@ -11,7 +11,6 @@ import UIKit
 class NewServiceViewController: UIViewController {
     private lazy var customView: NewServiceViewProtocol = NewServiceView()
     private lazy var viewModel: NewServiceViewModelProtocol = NewServiceViewModel()
-    private var serviceName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +39,8 @@ class NewServiceViewController: UIViewController {
         dismiss(animated: true)
     }
 
-    private func goToSelectDate(serviceName: String, serviceDuration: Int) {
-         navigationController?.pushViewController(SelectDateViewController(serviceName: serviceName, serviceDuration: serviceDuration), animated: true)
+    private func goToSelectDate(service: ServiceLayout) {
+        navigationController?.pushViewController(SelectDateViewController(service: service), animated: true)
     }
 
     private func showError(_ message: String) {
@@ -86,8 +85,6 @@ extension NewServiceViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let name = viewModel.services[indexPath.row].name
-        let duration = viewModel.services[indexPath.row].duration
-        goToSelectDate(serviceName: name, serviceDuration: duration)
+        goToSelectDate(service: viewModel.services[indexPath.row])
     }
 }

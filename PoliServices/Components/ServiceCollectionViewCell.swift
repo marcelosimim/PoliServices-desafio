@@ -70,7 +70,7 @@ class ServiceCollectionViewCell: UICollectionViewCell {
         ])
     }
 
-    func configure(_ model: ServiceCellModel) {
+    func configure(_ model: ServiceLayout) {
         serviceImage.image = model.getImage()
         serviceImage.tintColor = model.getColor()
         serviceNameLabel.text = model.name
