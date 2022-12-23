@@ -27,7 +27,7 @@ struct ServiceCellModel {
         let hours = duration/60
         let minutes = duration%60
 
-        return "\(Time.formattedTimeDigits(hours)):\(Time.formattedTimeDigits(minutes))h"
+        return "\(hours.formattedTimeDigits()):\(minutes.formattedTimeDigits())h"
     }
 
     static func fromServiceAPIModel(_ model: ServiceAPIModel) -> ServiceCellModel? {

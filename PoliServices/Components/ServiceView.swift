@@ -29,16 +29,33 @@ final class ServiceView: UIView {
         return label
     }()
 
-    private lazy var dateAndHourLabel: UILabel = {
+    private lazy var startLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.text = "Date e Hora"
+        label.text = "Início:"
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    private lazy var serviceDateAndHourLabel: UILabel = {
+    private lazy var startDateLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12, weight: .bold)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var endLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.text = "Encerramento:"
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var endDateLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .bold)
         label.text = "30/11 as 19h"
@@ -65,8 +82,10 @@ final class ServiceView: UIView {
 
     private func addViews() {
         addSubview(serviceNameLabel)
-        addSubview(dateAndHourLabel)
-        addSubview(serviceDateAndHourLabel)
+        addSubview(startLabel)
+        addSubview(startDateLabel)
+        addSubview(endLabel)
+        addSubview(endDateLabel)
         addSubview(bookImage)
         setupConstraints()
     }
@@ -77,28 +96,37 @@ final class ServiceView: UIView {
             serviceNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             serviceNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 
-            serviceDateAndHourLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
-            serviceDateAndHourLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            serviceDateAndHourLabel.trailingAnchor.constraint(equalTo: bookImage.leadingAnchor, constant: 16),
+            endDateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            endDateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            endDateLabel.trailingAnchor.constraint(equalTo: bookImage.leadingAnchor, constant: 16),
 
-            dateAndHourLabel.bottomAnchor.constraint(equalTo: serviceDateAndHourLabel.topAnchor, constant: -4),
-            dateAndHourLabel.leadingAnchor.constraint(equalTo: serviceDateAndHourLabel.leadingAnchor),
-            dateAndHourLabel.trailingAnchor.constraint(equalTo: serviceDateAndHourLabel.trailingAnchor),
+            endLabel.bottomAnchor.constraint(equalTo: endDateLabel.topAnchor, constant: -4),
+            endLabel.leadingAnchor.constraint(equalTo: endDateLabel.leadingAnchor),
+            endLabel.trailingAnchor.constraint(equalTo: endDateLabel.trailingAnchor),
+
+            startDateLabel.bottomAnchor.constraint(equalTo: endLabel.topAnchor, constant: -4),
+            startDateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            startDateLabel.trailingAnchor.constraint(equalTo: bookImage.leadingAnchor, constant: 16),
+
+            startLabel.bottomAnchor.constraint(equalTo: startDateLabel.topAnchor, constant: -4),
+            startLabel.leadingAnchor.constraint(equalTo: startDateLabel.leadingAnchor),
 
             bookImage.topAnchor.constraint(equalTo: serviceNameLabel.bottomAnchor, constant: 27),
             bookImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
             bookImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
-            bookImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
+            bookImage.heightAnchor.constraint(equalToConstant: 70),
             bookImage.widthAnchor.constraint(equalTo: bookImage.heightAnchor)
         ])
     }
 
     func setupService(_ service: Service) {
+        startDateLabel.text = formatDate(service.startDate)
+        endDateLabel.text = formatDate(service.endDate)
         serviceNameLabel.text = service.name
-        let serviceDate = Date(timeIntervalSince1970: service.date)
-        serviceDateAndHourLabel.text = serviceDate.formatted(
-            date: .numeric,
-            time: .shortened
-        )
+    }
+
+    private func formatDate(_ timeInterval: TimeInterval) -> String {
+        let date = Date(timeIntervalSince1970: timeInterval)
+        return date.formatted(date: .numeric, time: .shortened)
     }
 }

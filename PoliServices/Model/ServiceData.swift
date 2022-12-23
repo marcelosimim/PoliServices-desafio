@@ -10,31 +10,39 @@
 import Foundation
 
 struct ServiceData {
-    private let serviceDateKey = "service_date"
-    private let serviceNameKey = "service_name"
+    private let dateStartKey = "service_date"
+    private let dateEndKey = "service_date_end"
+    private let nameKey = "service_name"
 
     func saveService(_ service: Service) {
-        UserDefaults.standard.set(service.date, forKey: "service_date")
-        UserDefaults.standard.set(service.name, forKey: "service_name")
+        UserDefaults.standard.set(service.startDate, forKey: dateStartKey)
+        UserDefaults.standard.set(service.endDate, forKey: dateEndKey)
+        UserDefaults.standard.set(service.name, forKey: nameKey)
     }
 
     func removeService() {
-        UserDefaults.standard.removeObject(forKey: "service_date")
-        UserDefaults.standard.removeObject(forKey: "service_name")
+        UserDefaults.standard.removeObject(forKey: dateStartKey)
+        UserDefaults.standard.removeObject(forKey:nameKey)
+        UserDefaults.standard.removeObject(forKey: dateEndKey)
     }
 
-    func getServiceDate() -> TimeInterval {
-        TimeInterval(UserDefaults.standard.integer(forKey: "service_date"))
+    func getServiceDateBegin() -> TimeInterval {
+        TimeInterval(UserDefaults.standard.integer(forKey: dateStartKey))
     }
 
-    func getServiceName() -> String? {
-        UserDefaults.standard.string(forKey: "service_name")
+    func getServiceDateEnd() -> TimeInterval {
+        TimeInterval(UserDefaults.standard.integer(forKey: dateEndKey))
+    }
+
+    func getServiceName() -> String {
+        UserDefaults.standard.string(forKey: "service_name") ?? ""
     }
 
     func getService() -> Service? {
-        guard let name = getServiceName() else { return nil }
-        let date = getServiceDate()
-        return Service(date: date, name: name)
+        let name = getServiceName()
+        let begin = getServiceDateBegin()
+        let end = getServiceDateEnd()
+        return Service(startDate: begin, endDate: end, name: name)
     }
 }
 

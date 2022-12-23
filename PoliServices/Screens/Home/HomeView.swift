@@ -119,7 +119,6 @@ final class HomeView: UIView, HomeViewProtocol {
             serviceStack.topAnchor.constraint(equalTo: separatorLine.bottomAnchor, constant: 32),
             serviceStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
             serviceStack.centerXAnchor.constraint(equalTo: centerXAnchor),
-            // serviceStack.heightAnchor.constraint(equalTo: serviceStack.widthAnchor, multiplier: 9/21),
 
             newServiceButton.heightAnchor.constraint(equalToConstant: 55),
         ])
