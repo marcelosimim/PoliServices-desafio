@@ -18,6 +18,7 @@ protocol HomeViewProtocol {
     var delegate: HomeViewDelegate? { get set }
     func setupServiceStack(hasService: Bool)
     func setupService(_ service: Service)
+    func setupCountdown(_ time: Time)
     func setupCurrentDate(_ date: String)
     func setupTotalOfServices(_ total: Int)
 }
@@ -167,5 +168,9 @@ final class HomeView: UIView, HomeViewProtocol {
     func setupService(_ service: Service) {
         setupServiceStack(hasService: true)
         serviceView.setupService(service)
+    }
+
+    func setupCountdown(_ time: Time) {
+        serviceView.setupCountdown(time)
     }
 }

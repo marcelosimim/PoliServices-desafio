@@ -20,6 +20,14 @@ final class NextServiceView: UIView {
         return label
     }()
 
+    private lazy var countdownLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.text = "Faltam blablalla"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     private lazy var serviceView: ServiceView = {
         let view = ServiceView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +42,7 @@ final class NextServiceView: UIView {
 
     private func addViews() {
         addSubview(nextServiceLabel)
+        addSubview(countdownLabel)
         addSubview(serviceView)
         setupConstraints()
     }
@@ -44,7 +53,11 @@ final class NextServiceView: UIView {
             nextServiceLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             nextServiceLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
 
-            serviceView.topAnchor.constraint(equalTo: nextServiceLabel.bottomAnchor, constant: 8),
+            countdownLabel.topAnchor.constraint(equalTo: nextServiceLabel.bottomAnchor, constant: 4),
+            countdownLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            countdownLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+
+            serviceView.topAnchor.constraint(equalTo: countdownLabel.bottomAnchor, constant: 16),
             serviceView.leadingAnchor.constraint(equalTo: leadingAnchor),
             serviceView.trailingAnchor.constraint(equalTo: trailingAnchor),
             serviceView.bottomAnchor.constraint(equalTo: bottomAnchor)
@@ -53,5 +66,41 @@ final class NextServiceView: UIView {
 
     func setupService(_ service: Service) {
         serviceView.setupService(service)
+    }
+
+    func setupCountdown(_ time: Time) {
+          if time.isMoreThanOneDay() {
+              countdownLabel.text = "\(countdownStart(time.days)) \(countdownDay(time.days))"
+          } else if time.isMoreThanHalfDay() {
+              countdownLabel.text = "Faltam menos de 1 dia."
+          } else if time.isBrokenHour() {
+              countdownLabel.text = "\(countdownStart(time.hours)) \(countdownHour(time.hours)) e \(countdownMinutes(time.minutes)) \(countDownEnd())"
+          } else if time.isFullHour() {
+              countdownLabel.text = "\(countdownStart(time.hours+1)) \(countdownHour(time.hours+1))."
+          } else if time.isLessThanOneHour() {
+              countdownLabel.text = "\(countdownStart(time.minutes)) \(countdownMinutes(time.minutes)) \(countDownEnd())"
+          } else {
+              countdownLabel.text = ""
+          }
+    }
+
+    private func countdownStart(_ value: Int) -> String {
+        value == 1 ? "Falta" : "Faltam"
+    }
+
+    private func countdownDay(_ day: Int) -> String {
+        day == 1 ? "\(day) dia." : "\(day) dias."
+    }
+
+    private func countdownHour(_ hour: Int) -> String {
+        hour == 1 ? "\(hour) hora" : "\(hour) horas"
+    }
+
+    private func countdownMinutes(_ minutes: Int) -> String {
+        minutes == 1 ? "\(minutes) minuto" : "\(minutes) minutos"
+    }
+
+    private func countDownEnd() -> String {
+        "para o atendimento."
     }
 }

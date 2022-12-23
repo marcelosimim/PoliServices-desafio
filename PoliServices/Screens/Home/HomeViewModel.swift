@@ -10,6 +10,7 @@ import Foundation
 
 protocol HomeViewModelProtocol {
     var showServiceCompletion: ((Service) -> Void) { get set }
+    var countdownCompletion: ((Time) -> Void) { get set }
     var removeServiceCompletion: (() -> Void) { get set }
 
     func getCurrentDate() -> String
@@ -21,6 +22,7 @@ protocol HomeViewModelProtocol {
 
 final class HomeViewModel: HomeViewModelProtocol {
     var showServiceCompletion: ((Service) -> Void) = { _ in }
+    var countdownCompletion: ((Time) -> Void) = { _ in }
     var removeServiceCompletion: (() -> Void) = { }
 
     private var timer: Timer?
@@ -52,12 +54,31 @@ final class HomeViewModel: HomeViewModelProtocol {
     func setupService() {
         if hasService() {
             guard let service = serviceData.getService() else { return }
+            calculateCountdown(start: service.startDate)
             showServiceCompletion(service)
         } else {
             serviceData.removeService()
             deinitTimer()
             removeServiceCompletion()
         }
+    }
+
+    private func calculateCountdown(start: TimeInterval) {
+        let currentDate = Date()
+        let startDate = Date(timeIntervalSince1970: start)
+        let timeLeft = currentDate-startDate
+        guard let timeLeft = timeLeft.minute else { return }
+        calculateTime(timeLeft)
+    }
+
+    private func calculateTime(_ timeLeft: Int) {
+        var minutesLeft = timeLeft*(-1)
+        let days = minutesLeft/1440
+        let hour = minutesLeft/60
+        minutesLeft %= 60
+        let time = Time(days: days, hours: hour, minutes: minutesLeft+1)
+
+        countdownCompletion(time)
     }
 
     private func setTimer() {

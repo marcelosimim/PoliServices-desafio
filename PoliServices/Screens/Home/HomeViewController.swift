@@ -45,6 +45,13 @@ class HomeViewController: UIViewController {
             guard let self = self else { return }
             self.customView.setupService(service)
         }
+
+        viewModel.countdownCompletion = { [weak self] time in
+            guard let self else { return }
+            self.customView.setupCountdown(time)
+
+        }
+
         viewModel.removeServiceCompletion = { [weak self] in
             guard let self = self else { return }
             self.customView.setupServiceStack(hasService: false)
