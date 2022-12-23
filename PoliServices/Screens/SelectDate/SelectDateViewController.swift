@@ -29,7 +29,6 @@ class SelectDateViewController: UIViewController {
         customView.delegate = self
         setupNavigationBar()
         viewModelBinds()
-        viewModel.setupEndTime(duration: serviceDuration)
     }
 
     override func loadView() {
@@ -55,14 +54,15 @@ class SelectDateViewController: UIViewController {
     }
 
     @objc private func didTapSave() {
+        guard let endDate = viewModel.endDate else { return }
         let selectedDate = customView.getSelectedDate()
-        let service = Service(date: selectedDate, name: serviceName)
+        let service = Service(startDate: selectedDate, endDate: endDate, name: serviceName)
         viewModel.save(service)
     }
 }
 
 extension SelectDateViewController: SelectDateViewDelegate {
-    func recalculateEndTime(hour: Int, minute: Int) {
-        viewModel.recalculateEndTime(duration: serviceDuration, hour: hour, minute: minute)
+    func calculateEndTime(date: Date) {
+        viewModel.setupEndTime(selectedDate: date, duration: serviceDuration)
     }
 }

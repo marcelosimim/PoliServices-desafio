@@ -10,7 +10,8 @@
 import Foundation
 
 struct Service {
-    let date: TimeInterval
+    let startDate: TimeInterval
+    let endDate: TimeInterval
     let name: String
 }
 

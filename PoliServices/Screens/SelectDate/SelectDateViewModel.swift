@@ -9,36 +9,27 @@
 import Foundation
 
 protocol SelectDateViewModelProtocol {
+    var endDate: TimeInterval? { get }
     var saveServiceCompletion: (() -> Void) { get set }
     var didFinishCalculationEndTime: ((String) -> Void) { get set }
 
-    func setupEndTime(duration: Int)
-    func recalculateEndTime(duration: Int, hour: Int, minute: Int)
+    func setupEndTime(selectedDate: Date, duration: Int)
     func save(_ service: Service)
 }
 
 final class SelectDateViewModel: SelectDateViewModelProtocol {
     private let serviceData = ServiceData()
+    var endDate: TimeInterval?
     var saveServiceCompletion: (() -> Void) = { }
     var didFinishCalculationEndTime: ((String) -> Void) = { _ in }
 
-    func setupEndTime(duration: Int) {
-        let hour = Calendar.current.component(.hour, from: Date())
-        let minute = Calendar.current.component(.minute, from: Date()) + 1
+    func setupEndTime(selectedDate: Date, duration: Int) {
+        let endDate = Calendar.current.date(byAdding: .minute, value: duration, to: selectedDate) ?? Date()
+        let endHour = Calendar.current.component(.hour, from: endDate)
+        let endMinute = Calendar.current.component(.minute, from: endDate)
+        let endTime = "\(endHour.formattedTimeDigits()):\(endMinute.formattedTimeDigits())"
 
-        calculateEndTime(duration: duration, hour: hour, minute: minute)
-    }
-
-    func recalculateEndTime(duration: Int, hour: Int, minute: Int) {
-        calculateEndTime(duration: duration, hour: hour, minute: minute)
-    }
-
-    private func calculateEndTime(duration: Int, hour: Int, minute: Int) {
-        let time = Time(hour: hour, minute: minute)
-        let endHour = time.addToHour(duration: duration)
-        let endMinute = time.addToMinute(duration: duration)
-        let endTime = time.formattedTime(hour: endHour, minute: endMinute)
-
+        self.endDate = endDate.timeIntervalSince1970
         didFinishCalculationEndTime(endTime)
     }
 

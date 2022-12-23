@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 protocol SelectDateViewDelegate: AnyObject {
-    func recalculateEndTime(hour: Int, minute: Int)
+    func calculateEndTime(date: Date)
 }
 
 protocol SelectDateViewProtocol {
@@ -42,6 +42,7 @@ final class SelectDateView: UIView, SelectDateViewProtocol {
         datePicker.date = Calendar.current.date(byAdding: .minute, value: 1, to: Date()) ?? Date()
         datePicker.addTarget(self, action: #selector(didChangeDateValue), for: .valueChanged)
         datePicker.translatesAutoresizingMaskIntoConstraints = false
+        delegate?.calculateEndTime(date: datePicker.date)
         return datePicker
     }()
 
@@ -109,10 +110,7 @@ final class SelectDateView: UIView, SelectDateViewProtocol {
     }
 
     @objc private func didChangeDateValue() {
-        let hour = Calendar.current.component(.hour, from: datePicker.date)
-        let minute = Calendar.current.component(.minute, from: datePicker.date)
-
-        delegate?.recalculateEndTime(hour: hour, minute: minute)
+        delegate?.calculateEndTime(date: datePicker.date)
     }
 
     func getSelectedDate() -> TimeInterval {
