@@ -127,6 +127,8 @@ final class ServiceView: UIView {
 
     private func formatDate(_ timeInterval: TimeInterval) -> String {
         let date = Date(timeIntervalSince1970: timeInterval)
-        return date.formatted(date: .numeric, time: .shortened)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        return dateFormatter.string(from: date)
     }
 }
