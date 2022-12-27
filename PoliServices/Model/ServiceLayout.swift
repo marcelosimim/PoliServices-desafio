@@ -11,7 +11,6 @@ import UIKit
 struct ServiceLayout: Codable {
     let icon: String
     let color: String
-    let type: ServiceType
     let name: String
     let duration: Int
 
@@ -31,7 +30,6 @@ struct ServiceLayout: Codable {
     }
 
     static func fromServiceAPIModel(_ model: ServiceAPIModel) -> ServiceLayout? {
-        guard let type = ServiceType(rawValue: model.id) else { return nil }
-        return ServiceLayout(icon: model.icon, color: model.color, type: type, name: model.name, duration: model.duration)
+        return ServiceLayout(icon: model.icon, color: model.color, name: model.name, duration: model.duration)
     }
 }

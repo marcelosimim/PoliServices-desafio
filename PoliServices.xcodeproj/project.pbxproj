@@ -21,7 +21,6 @@
 		A30D83552950ABDD00A0C205 /* NewServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83522950ABDD00A0C205 /* NewServiceView.swift */; };
 		A30D83562950ABDD00A0C205 /* NewServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83532950ABDD00A0C205 /* NewServiceViewModel.swift */; };
 		A30D83592950AE1700A0C205 /* ServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83582950AE1700A0C205 /* ServiceCollectionViewCell.swift */; };
-		A30D835E2950AE6200A0C205 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D835D2950AE6200A0C205 /* ServiceType.swift */; };
 		A30D83602950AEC700A0C205 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D835F2950AEC700A0C205 /* UIImage.swift */; };
 		A30D83652950CD2500A0C205 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83622950CD2500A0C205 /* HomeViewController.swift */; };
 		A30D83662950CD2500A0C205 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83632950CD2500A0C205 /* HomeView.swift */; };
@@ -55,7 +54,6 @@
 		A30D83522950ABDD00A0C205 /* NewServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewServiceView.swift; sourceTree = "<group>"; };
 		A30D83532950ABDD00A0C205 /* NewServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewServiceViewModel.swift; sourceTree = "<group>"; };
 		A30D83582950AE1700A0C205 /* ServiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCollectionViewCell.swift; sourceTree = "<group>"; };
-		A30D835D2950AE6200A0C205 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		A30D835F2950AEC700A0C205 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		A30D83622950CD2500A0C205 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A30D83632950CD2500A0C205 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			children = (
 				A30D83392950934000A0C205 /* AppDelegate */,
 				A30D83572950ADEB00A0C205 /* Components */,
-				A30D835C2950AE5500A0C205 /* Enum */,
 				A30D83462950A2A500A0C205 /* Extensions */,
 				A30D834B2950A89300A0C205 /* Model */,
 				A364A8D72954BDFF007B803E /* Network */,
@@ -194,14 +191,6 @@
 				A30D83712950EFF500A0C205 /* NextServiceView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		A30D835C2950AE5500A0C205 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				A30D835D2950AE6200A0C205 /* ServiceType.swift */,
-			);
-			path = Enum;
 			sourceTree = "<group>";
 		};
 		A30D83612950CD1900A0C205 /* Home */ = {
@@ -307,7 +296,6 @@
 				A30D83562950ABDD00A0C205 /* NewServiceViewModel.swift in Sources */,
 				A30D83672950CD2500A0C205 /* HomeViewModel.swift in Sources */,
 				A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */,
-				A30D835E2950AE6200A0C205 /* ServiceType.swift in Sources */,
 				A30D83442950964100A0C205 /* SelectDateViewModel.swift in Sources */,
 				A30D83542950ABDD00A0C205 /* NewServiceViewController.swift in Sources */,
 				A30D834D2950A8B100A0C205 /* ServiceData.swift in Sources */,
