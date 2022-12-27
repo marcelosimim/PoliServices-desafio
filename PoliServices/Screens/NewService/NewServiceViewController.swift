@@ -56,9 +56,7 @@ class NewServiceViewController: UIViewController {
     private func viewModelBinds() {
         viewModel.didFinishFetchingServicesSuccess = { [weak self] in
             guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.customView.didFinishFetchingServices()
-            }
+            self.customView.didFinishFetchingServices()
         }
 
         viewModel.didFinishFetchingServicesFailure = { [weak self] message in

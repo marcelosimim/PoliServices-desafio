@@ -19,16 +19,22 @@ class ServiceAPI: ServiceAPIProtocol {
         URLSession.shared.dataTask(with: url) { data, _ , error in
             guard let data = data else {
                 if let error = error {
-                    completion(.failure(error))
+                    DispatchQueue.main.async {
+                        completion(.failure(error))
+                    }
                 }
                 return
             }
             do {
                 let decoder = JSONDecoder()
                 let results = try decoder.decode(ServiceAPIResult.self, from: data)
-                completion(.success(results))
+                DispatchQueue.main.async {
+                    completion(.success(results))
+                }
             } catch(let decoderError) {
-                completion(.failure(decoderError))
+                DispatchQueue.main.async {
+                    completion(.failure(decoderError))
+                }
             }
         }.resume()
     }
