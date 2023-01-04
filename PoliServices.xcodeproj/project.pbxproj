@@ -32,6 +32,10 @@
 		A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */; };
 		A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */; };
 		A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8E12954CA70007B803E /* ServiceLayout.swift */; };
+		A37ED9782964B938001CF9B1 /* ServiceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9752964B938001CF9B1 /* ServiceDetailsViewController.swift */; };
+		A37ED9792964B938001CF9B1 /* ServiceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9762964B938001CF9B1 /* ServiceDetailsView.swift */; };
+		A37ED97A2964B938001CF9B1 /* ServiceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */; };
+		A37ED97D2965ACDD001CF9B1 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED97C2965ACDD001CF9B1 /* TimeInterval.swift */; };
 		A38D249F2955E60500B06DF0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D249E2955E60500B06DF0 /* Int.swift */; };
 		A38D24A12956169F00B06DF0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D24A02956169F00B06DF0 /* Date.swift */; };
 		A38D24A3295631B400B06DF0 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D24A2295631B400B06DF0 /* Time.swift */; };
@@ -65,6 +69,10 @@
 		A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIModel.swift; sourceTree = "<group>"; };
 		A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIResult.swift; sourceTree = "<group>"; };
 		A364A8E12954CA70007B803E /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
+		A37ED9752964B938001CF9B1 /* ServiceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewController.swift; sourceTree = "<group>"; };
+		A37ED9762964B938001CF9B1 /* ServiceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsView.swift; sourceTree = "<group>"; };
+		A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewModel.swift; sourceTree = "<group>"; };
+		A37ED97C2965ACDD001CF9B1 /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		A38D249E2955E60500B06DF0 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		A38D24A02956169F00B06DF0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A38D24A2295631B400B06DF0 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
@@ -133,6 +141,7 @@
 		A30D833C295094F700A0C205 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A37ED9742964B928001CF9B1 /* ServiceDetails */,
 				A30D83612950CD1900A0C205 /* Home */,
 				A30D83502950ABB600A0C205 /* NewService */,
 				A30D83452950964600A0C205 /* SelectDate */,
@@ -157,6 +166,7 @@
 				A30D835F2950AEC700A0C205 /* UIImage.swift */,
 				A38D249E2955E60500B06DF0 /* Int.swift */,
 				A38D24A02956169F00B06DF0 /* Date.swift */,
+				A37ED97C2965ACDD001CF9B1 /* TimeInterval.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,6 +229,16 @@
 				A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A37ED9742964B928001CF9B1 /* ServiceDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A37ED9752964B938001CF9B1 /* ServiceDetailsViewController.swift */,
+				A37ED9762964B938001CF9B1 /* ServiceDetailsView.swift */,
+				A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */,
+			);
+			path = ServiceDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */,
+				A37ED97D2965ACDD001CF9B1 /* TimeInterval.swift in Sources */,
 				A30D83562950ABDD00A0C205 /* NewServiceViewModel.swift in Sources */,
 				A30D83672950CD2500A0C205 /* HomeViewModel.swift in Sources */,
 				A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */,
@@ -309,9 +330,12 @@
 				A38D24A3295631B400B06DF0 /* Time.swift in Sources */,
 				A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
+				A37ED9782964B938001CF9B1 /* ServiceDetailsViewController.swift in Sources */,
 				A30D83592950AE1700A0C205 /* ServiceCollectionViewCell.swift in Sources */,
 				A38D249F2955E60500B06DF0 /* Int.swift in Sources */,
 				A30D83652950CD2500A0C205 /* HomeViewController.swift in Sources */,
+				A37ED9792964B938001CF9B1 /* ServiceDetailsView.swift in Sources */,
+				A37ED97A2964B938001CF9B1 /* ServiceDetailsViewModel.swift in Sources */,
 				4C55034729379F3600699589 /* SceneDelegate.swift in Sources */,
 				A30D83742950EFF500A0C205 /* NextServiceView.swift in Sources */,
 				A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */,
@@ -457,7 +481,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BF2YF4NNR9;
+				DEVELOPMENT_TEAM = GM2YUUZ32A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PoliServices/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Poli Services";
@@ -466,7 +490,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,7 +514,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BF2YF4NNR9;
+				DEVELOPMENT_TEAM = GM2YUUZ32A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PoliServices/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Poli Services";
@@ -499,7 +523,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

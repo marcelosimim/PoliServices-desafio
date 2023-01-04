@@ -30,11 +30,7 @@ final class HomeViewModel: HomeViewModelProtocol {
     private var countdownIsZero = false
 
     func getCurrentDate() -> String {
-        let currentDate = Date()
-        return currentDate.formatted(
-            date: .long,
-            time: .omitted
-        )
+        Date().timeIntervalSince1970.formatInLongDate()
     }
 
     func getTotalOfServices() -> Int {

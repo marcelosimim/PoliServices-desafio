@@ -118,17 +118,10 @@ final class ServiceView: UIView {
     }
 
     func setupService(_ service: Service) {
-        startDateLabel.text = formatDate(service.startDate)
-        endDateLabel.text = formatDate(service.endDate)
+        startDateLabel.text = service.startDate.formatInDateAndHour()
+        endDateLabel.text = service.endDate.formatInDateAndHour()
         serviceNameLabel.text = service.layout.name
         backgroundColor = service.layout.getColor()
         serviceImage.image = service.layout.getImage()
-    }
-
-    private func formatDate(_ timeInterval: TimeInterval) -> String {
-        let date = Date(timeIntervalSince1970: timeInterval)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
-        return dateFormatter.string(from: date)
     }
 }
