@@ -10,16 +10,24 @@
 import Foundation
 import UIKit
 
+protocol ServiceDetailsViewDelegate: AnyObject {
+    func didTapCancelButton()
+}
+
 protocol ServiceDetailsViewProtocol {
+    var delegate: ServiceDetailsViewDelegate? { get set }
+
     func configure(service: Service)
+    func setupCancelButton(_ isEnabled: Bool)
 }
 
 final class ServiceDetailsView: UIView, ServiceDetailsViewProtocol {
     private lazy var contentStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [serviceImage, serviceName, creationDate, startDate, startHour, endDate, endHour])
+        let stack = UIStackView(arrangedSubviews: [serviceImage, serviceName, creationDate, startDate, startHour, endDate, endHour, cancelButton, cancelMessage])
         stack.axis = .vertical
         stack.spacing = 8
         stack.setCustomSpacing(64, after: creationDate)
+        stack.setCustomSpacing(128, after: endHour)
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -78,6 +86,31 @@ final class ServiceDetailsView: UIView, ServiceDetailsViewProtocol {
         return label
     }()
 
+    private lazy var cancelButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Cancelar serviço", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.white, for: .disabled)
+        button.backgroundColor = .systemRed
+        button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(didTapCancelButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    private lazy var cancelMessage: UILabel = {
+        let label = UILabel()
+        label.text = "Não é possível cancelar o serviço. O horário restante é menor que 2 horas."
+        label.textColor = .lightGray
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    var delegate: ServiceDetailsViewDelegate?
+
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = .white
@@ -111,5 +144,14 @@ final class ServiceDetailsView: UIView, ServiceDetailsViewProtocol {
 
         endDate.text = "Data de encerramento: \(service.endDate.formatInLongDate())"
         endHour.text = "Hora de encerramento: \(service.endDate.formatInHour("h:mm a"))"
+    }
+
+    func setupCancelButton(_ isEnabled: Bool) {
+        cancelButton.isEnabled = isEnabled
+        cancelMessage.isHidden = isEnabled
+    }
+
+    @objc private func didTapCancelButton() {
+        delegate?.didTapCancelButton()
     }
 }

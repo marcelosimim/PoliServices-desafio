@@ -25,10 +25,26 @@ class ServiceDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        customView.delegate = self
+        viewModelBinds()
+        viewModel.setupCancelButton(service: service)
     }
 
     override func loadView() {
         super.loadView()
         view = customView as? UIView
+    }
+
+    private func viewModelBinds() {
+        viewModel.isCancelButtonEnabledCompletion = { [weak self] isEnabled in
+            guard let self else { return }
+            self.customView.setupCancelButton(isEnabled)
+        }
+    }
+}
+
+extension ServiceDetailsViewController: ServiceDetailsViewDelegate {
+    func didTapCancelButton() {
+        
     }
 }
