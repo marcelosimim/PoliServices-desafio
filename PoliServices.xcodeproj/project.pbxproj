@@ -36,6 +36,8 @@
 		A37ED9792964B938001CF9B1 /* ServiceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9762964B938001CF9B1 /* ServiceDetailsView.swift */; };
 		A37ED97A2964B938001CF9B1 /* ServiceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */; };
 		A37ED97D2965ACDD001CF9B1 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED97C2965ACDD001CF9B1 /* TimeInterval.swift */; };
+		A37ED9812965F471001CF9B1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9802965F471001CF9B1 /* NotificationManager.swift */; };
+		A37ED98429660A9C001CF9B1 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED98329660A9C001CF9B1 /* NSNotificationName.swift */; };
 		A38D249F2955E60500B06DF0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D249E2955E60500B06DF0 /* Int.swift */; };
 		A38D24A12956169F00B06DF0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D24A02956169F00B06DF0 /* Date.swift */; };
 		A38D24A3295631B400B06DF0 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D24A2295631B400B06DF0 /* Time.swift */; };
@@ -73,6 +75,8 @@
 		A37ED9762964B938001CF9B1 /* ServiceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsView.swift; sourceTree = "<group>"; };
 		A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewModel.swift; sourceTree = "<group>"; };
 		A37ED97C2965ACDD001CF9B1 /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
+		A37ED9802965F471001CF9B1 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A37ED98329660A9C001CF9B1 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		A38D249E2955E60500B06DF0 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		A38D24A02956169F00B06DF0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A38D24A2295631B400B06DF0 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
@@ -110,8 +114,10 @@
 			children = (
 				A30D83392950934000A0C205 /* AppDelegate */,
 				A30D83572950ADEB00A0C205 /* Components */,
+				A37ED97E2965F43A001CF9B1 /* Data */,
 				A30D83462950A2A500A0C205 /* Extensions */,
 				A30D834B2950A89300A0C205 /* Model */,
+				A37ED9822965FD80001CF9B1 /* Managers */,
 				A364A8D72954BDFF007B803E /* Network */,
 				A30D833A2950934D00A0C205 /* Resources */,
 				A30D833C295094F700A0C205 /* Screens */,
@@ -167,6 +173,7 @@
 				A38D249E2955E60500B06DF0 /* Int.swift */,
 				A38D24A02956169F00B06DF0 /* Date.swift */,
 				A37ED97C2965ACDD001CF9B1 /* TimeInterval.swift */,
+				A37ED98329660A9C001CF9B1 /* NSNotificationName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,7 +181,6 @@
 		A30D834B2950A89300A0C205 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A30D834C2950A8B100A0C205 /* ServiceData.swift */,
 				A30D834E2950A90900A0C205 /* Service.swift */,
 				A364A8E12954CA70007B803E /* ServiceLayout.swift */,
 				A38D24A2295631B400B06DF0 /* Time.swift */,
@@ -239,6 +245,22 @@
 				A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */,
 			);
 			path = ServiceDetails;
+			sourceTree = "<group>";
+		};
+		A37ED97E2965F43A001CF9B1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A30D834C2950A8B100A0C205 /* ServiceData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A37ED9822965FD80001CF9B1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A37ED9802965F471001CF9B1 /* NotificationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +341,7 @@
 				A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */,
 				A30D83442950964100A0C205 /* SelectDateViewModel.swift in Sources */,
 				A30D83542950ABDD00A0C205 /* NewServiceViewController.swift in Sources */,
+				A37ED9812965F471001CF9B1 /* NotificationManager.swift in Sources */,
 				A30D834D2950A8B100A0C205 /* ServiceData.swift in Sources */,
 				A30D83692950CF7500A0C205 /* InfoView.swift in Sources */,
 				A364A8D92954BE40007B803E /* ServiceAPI.swift in Sources */,
@@ -339,6 +362,7 @@
 				4C55034729379F3600699589 /* SceneDelegate.swift in Sources */,
 				A30D83742950EFF500A0C205 /* NextServiceView.swift in Sources */,
 				A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */,
+				A37ED98429660A9C001CF9B1 /* NSNotificationName.swift in Sources */,
 				A30D83602950AEC700A0C205 /* UIImage.swift in Sources */,
 				A30D834A2950A35B00A0C205 /* UIColor.swift in Sources */,
 				A30D83552950ABDD00A0C205 /* NewServiceView.swift in Sources */,

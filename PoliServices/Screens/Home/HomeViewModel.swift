@@ -12,6 +12,7 @@ protocol HomeViewModelProtocol {
     var showServiceCompletion: ((Service) -> Void) { get set }
     var countdownCompletion: ((Time) -> Void) { get set }
     var removeServiceCompletion: (() -> Void) { get set }
+    var serviceData: ServiceData { get }
 
     func getCurrentDate() -> String
     func getTotalOfServices() -> Int
@@ -24,9 +25,9 @@ final class HomeViewModel: HomeViewModelProtocol {
     var showServiceCompletion: ((Service) -> Void) = { _ in }
     var countdownCompletion: ((Time) -> Void) = { _ in }
     var removeServiceCompletion: (() -> Void) = { }
+    var serviceData = ServiceData()
 
     private var timer: Timer?
-    private let serviceData = ServiceData()
     private var countdownIsZero = false
 
     func getCurrentDate() -> String {

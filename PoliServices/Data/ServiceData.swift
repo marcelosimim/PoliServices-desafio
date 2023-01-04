@@ -17,6 +17,11 @@ struct ServiceData {
         if let encoded = try? JSONEncoder().encode(service) {
             UserDefaults.standard.set(encoded, forKey: serviceKey)
             updateTotalOfServices()
+            NotificationManager.shared.requestAutorization { granted in
+                if granted {
+                    NotificationManager.shared.scheduleNotification()
+                }
+            }
         }
     }
 
