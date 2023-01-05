@@ -17,7 +17,7 @@ protocol NewServiceViewModelProtocol {
 }
 
 final class NewServiceViewModel: NewServiceViewModelProtocol {
-    private let serviceAPI = ServiceAPI()
+    private let serviceAPI = DevPoliServiceAPI()
     var services: [ServiceLayout] = []
     var didFinishFetchingServicesSuccess: (() -> ()) = { }
     var didFinishFetchingServicesFailure: ((String) -> ()) = { _ in }

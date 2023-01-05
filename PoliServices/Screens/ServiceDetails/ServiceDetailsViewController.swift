@@ -12,6 +12,7 @@ class ServiceDetailsViewController: UIViewController {
     private lazy var customView: ServiceDetailsViewProtocol = ServiceDetailsView()
     private lazy var viewModel: ServiceDetailsViewModelProtocol = ServiceDetailsViewModel()
     private let service: Service
+    private var isPresenting = false
 
     init(service: Service) {
         self.service = service
@@ -39,12 +40,26 @@ class ServiceDetailsViewController: UIViewController {
         viewModel.isCancelButtonEnabledCompletion = { [weak self] isEnabled in
             guard let self else { return }
             self.customView.setupCancelButton(isEnabled)
+            if self.isPresenting && !isEnabled {
+                self.isPresenting = false
+                self.dismiss(animated: true)
+            }
         }
     }
 }
 
 extension ServiceDetailsViewController: ServiceDetailsViewDelegate {
     func didTapCancelButton() {
-        
+        let reasonForCancelation = ReasonForCancelationViewController()
+        reasonForCancelation.delegate = self
+        present(reasonForCancelation, animated: true)
+        isPresenting = true
+    }
+}
+
+extension ServiceDetailsViewController: ReasonForCancelationViewControllerDelegate {
+    func didFinishSendingReason() {
+        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }

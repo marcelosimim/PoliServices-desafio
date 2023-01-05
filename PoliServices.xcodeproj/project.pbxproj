@@ -28,7 +28,7 @@
 		A30D83692950CF7500A0C205 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83682950CF7500A0C205 /* InfoView.swift */; };
 		A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D836B2950D5C300A0C205 /* ServiceView.swift */; };
 		A30D83742950EFF500A0C205 /* NextServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83712950EFF500A0C205 /* NextServiceView.swift */; };
-		A364A8D92954BE40007B803E /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8D82954BE40007B803E /* ServiceAPI.swift */; };
+		A364A8D92954BE40007B803E /* DevPoliServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8D82954BE40007B803E /* DevPoliServiceAPI.swift */; };
 		A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */; };
 		A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */; };
 		A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8E12954CA70007B803E /* ServiceLayout.swift */; };
@@ -38,6 +38,10 @@
 		A37ED97D2965ACDD001CF9B1 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED97C2965ACDD001CF9B1 /* TimeInterval.swift */; };
 		A37ED9812965F471001CF9B1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9802965F471001CF9B1 /* NotificationManager.swift */; };
 		A37ED98429660A9C001CF9B1 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED98329660A9C001CF9B1 /* NSNotificationName.swift */; };
+		A37ED98929663FEB001CF9B1 /* ReasonForCancelationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED98629663FEB001CF9B1 /* ReasonForCancelationViewController.swift */; };
+		A37ED98A29663FEB001CF9B1 /* ReasonForCancelationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED98729663FEB001CF9B1 /* ReasonForCancelationView.swift */; };
+		A37ED98B29663FEB001CF9B1 /* ReasonForCancelationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED98829663FEB001CF9B1 /* ReasonForCancelationViewModel.swift */; };
+		A37ED98D296646C7001CF9B1 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED98C296646C7001CF9B1 /* Reason.swift */; };
 		A38D249F2955E60500B06DF0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D249E2955E60500B06DF0 /* Int.swift */; };
 		A38D24A12956169F00B06DF0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D24A02956169F00B06DF0 /* Date.swift */; };
 		A38D24A3295631B400B06DF0 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D24A2295631B400B06DF0 /* Time.swift */; };
@@ -67,7 +71,7 @@
 		A30D83682950CF7500A0C205 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		A30D836B2950D5C300A0C205 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		A30D83712950EFF500A0C205 /* NextServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextServiceView.swift; sourceTree = "<group>"; };
-		A364A8D82954BE40007B803E /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
+		A364A8D82954BE40007B803E /* DevPoliServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevPoliServiceAPI.swift; sourceTree = "<group>"; };
 		A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIModel.swift; sourceTree = "<group>"; };
 		A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIResult.swift; sourceTree = "<group>"; };
 		A364A8E12954CA70007B803E /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
@@ -77,6 +81,10 @@
 		A37ED97C2965ACDD001CF9B1 /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		A37ED9802965F471001CF9B1 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A37ED98329660A9C001CF9B1 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
+		A37ED98629663FEB001CF9B1 /* ReasonForCancelationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonForCancelationViewController.swift; sourceTree = "<group>"; };
+		A37ED98729663FEB001CF9B1 /* ReasonForCancelationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonForCancelationView.swift; sourceTree = "<group>"; };
+		A37ED98829663FEB001CF9B1 /* ReasonForCancelationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonForCancelationViewModel.swift; sourceTree = "<group>"; };
+		A37ED98C296646C7001CF9B1 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
 		A38D249E2955E60500B06DF0 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		A38D24A02956169F00B06DF0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A38D24A2295631B400B06DF0 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
@@ -116,7 +124,6 @@
 				A30D83572950ADEB00A0C205 /* Components */,
 				A37ED97E2965F43A001CF9B1 /* Data */,
 				A30D83462950A2A500A0C205 /* Extensions */,
-				A30D834B2950A89300A0C205 /* Model */,
 				A37ED9822965FD80001CF9B1 /* Managers */,
 				A364A8D72954BDFF007B803E /* Network */,
 				A30D833A2950934D00A0C205 /* Resources */,
@@ -147,6 +154,7 @@
 		A30D833C295094F700A0C205 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A30D834B2950A89300A0C205 /* Model */,
 				A37ED9742964B928001CF9B1 /* ServiceDetails */,
 				A30D83612950CD1900A0C205 /* Home */,
 				A30D83502950ABB600A0C205 /* NewService */,
@@ -223,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				A364A8DC2954C3AD007B803E /* Model */,
-				A364A8D82954BE40007B803E /* ServiceAPI.swift */,
+				A364A8D82954BE40007B803E /* DevPoliServiceAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -231,8 +239,9 @@
 		A364A8DC2954C3AD007B803E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */,
+				A37ED98C296646C7001CF9B1 /* Reason.swift */,
 				A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */,
+				A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +249,7 @@
 		A37ED9742964B928001CF9B1 /* ServiceDetails */ = {
 			isa = PBXGroup;
 			children = (
+				A37ED98529663FB0001CF9B1 /* ReasonForCancelation */,
 				A37ED9752964B938001CF9B1 /* ServiceDetailsViewController.swift */,
 				A37ED9762964B938001CF9B1 /* ServiceDetailsView.swift */,
 				A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */,
@@ -261,6 +271,16 @@
 				A37ED9802965F471001CF9B1 /* NotificationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		A37ED98529663FB0001CF9B1 /* ReasonForCancelation */ = {
+			isa = PBXGroup;
+			children = (
+				A37ED98629663FEB001CF9B1 /* ReasonForCancelationViewController.swift */,
+				A37ED98729663FEB001CF9B1 /* ReasonForCancelationView.swift */,
+				A37ED98829663FEB001CF9B1 /* ReasonForCancelationViewModel.swift */,
+			);
+			path = ReasonForCancelation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +356,8 @@
 			files = (
 				A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */,
 				A37ED97D2965ACDD001CF9B1 /* TimeInterval.swift in Sources */,
+				A37ED98A29663FEB001CF9B1 /* ReasonForCancelationView.swift in Sources */,
+				A37ED98D296646C7001CF9B1 /* Reason.swift in Sources */,
 				A30D83562950ABDD00A0C205 /* NewServiceViewModel.swift in Sources */,
 				A30D83672950CD2500A0C205 /* HomeViewModel.swift in Sources */,
 				A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */,
@@ -344,12 +366,13 @@
 				A37ED9812965F471001CF9B1 /* NotificationManager.swift in Sources */,
 				A30D834D2950A8B100A0C205 /* ServiceData.swift in Sources */,
 				A30D83692950CF7500A0C205 /* InfoView.swift in Sources */,
-				A364A8D92954BE40007B803E /* ServiceAPI.swift in Sources */,
+				A364A8D92954BE40007B803E /* DevPoliServiceAPI.swift in Sources */,
 				A30D83662950CD2500A0C205 /* HomeView.swift in Sources */,
 				A38D24A12956169F00B06DF0 /* Date.swift in Sources */,
 				A30D83422950964100A0C205 /* SelectDateViewController.swift in Sources */,
 				A30D834F2950A90900A0C205 /* Service.swift in Sources */,
 				A30D83432950964100A0C205 /* SelectDateView.swift in Sources */,
+				A37ED98B29663FEB001CF9B1 /* ReasonForCancelationViewModel.swift in Sources */,
 				A38D24A3295631B400B06DF0 /* Time.swift in Sources */,
 				A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
@@ -365,6 +388,7 @@
 				A37ED98429660A9C001CF9B1 /* NSNotificationName.swift in Sources */,
 				A30D83602950AEC700A0C205 /* UIImage.swift in Sources */,
 				A30D834A2950A35B00A0C205 /* UIColor.swift in Sources */,
+				A37ED98929663FEB001CF9B1 /* ReasonForCancelationViewController.swift in Sources */,
 				A30D83552950ABDD00A0C205 /* NewServiceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
