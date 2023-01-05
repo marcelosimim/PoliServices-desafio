@@ -60,6 +60,7 @@ extension SceneDelegate: UNUserNotificationCenterDelegate {
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        UserDefaults.standard.setValue(true, forKey: "hasNotification")
         NotificationCenter.default.post(name: NSNotification.Name.details, object: nil)
         completionHandler()
     }

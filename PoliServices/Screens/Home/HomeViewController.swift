@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         customView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(didTapDetailsNotification), name: NSNotification.Name.details, object: nil)
+        checkNotification()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +63,14 @@ class HomeViewController: UIViewController {
     @objc private func didTapDetailsNotification() {
         guard let service = viewModel.serviceData.getService() else { return }
         navigationController?.pushViewController(ServiceDetailsViewController(service: service), animated: true)
+    }
+
+    private func checkNotification() {
+        let hasNotification = UserDefaults.standard.bool(forKey: "hasNotification")
+        if hasNotification {
+            NotificationCenter.default.post(name: NSNotification.Name.details, object: nil)
+            UserDefaults.standard.setValue(false, forKey: "hasNotification")
+        }
     }
 }
 
