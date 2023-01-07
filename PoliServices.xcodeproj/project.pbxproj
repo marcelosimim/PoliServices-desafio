@@ -42,6 +42,8 @@
 		A37ED98A29663FEB001CF9B1 /* ReasonForCancelationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED98729663FEB001CF9B1 /* ReasonForCancelationView.swift */; };
 		A37ED98B29663FEB001CF9B1 /* ReasonForCancelationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED98829663FEB001CF9B1 /* ReasonForCancelationViewModel.swift */; };
 		A37ED98D296646C7001CF9B1 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED98C296646C7001CF9B1 /* Reason.swift */; };
+		A3886C912969AD150066BA01 /* NotificationIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3886C902969AD150066BA01 /* NotificationIdentifier.swift */; };
+		A3886C932969AE700066BA01 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3886C922969AE700066BA01 /* String.swift */; };
 		A38D249F2955E60500B06DF0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D249E2955E60500B06DF0 /* Int.swift */; };
 		A38D24A12956169F00B06DF0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D24A02956169F00B06DF0 /* Date.swift */; };
 		A38D24A3295631B400B06DF0 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D24A2295631B400B06DF0 /* Time.swift */; };
@@ -85,6 +87,8 @@
 		A37ED98729663FEB001CF9B1 /* ReasonForCancelationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonForCancelationView.swift; sourceTree = "<group>"; };
 		A37ED98829663FEB001CF9B1 /* ReasonForCancelationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonForCancelationViewModel.swift; sourceTree = "<group>"; };
 		A37ED98C296646C7001CF9B1 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
+		A3886C902969AD150066BA01 /* NotificationIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationIdentifier.swift; sourceTree = "<group>"; };
+		A3886C922969AE700066BA01 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A38D249E2955E60500B06DF0 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		A38D24A02956169F00B06DF0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A38D24A2295631B400B06DF0 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				A30D83392950934000A0C205 /* AppDelegate */,
 				A30D83572950ADEB00A0C205 /* Components */,
 				A37ED97E2965F43A001CF9B1 /* Data */,
+				A3886C8F2969ACF90066BA01 /* Enum */,
 				A30D83462950A2A500A0C205 /* Extensions */,
 				A37ED9822965FD80001CF9B1 /* Managers */,
 				A364A8D72954BDFF007B803E /* Network */,
@@ -182,6 +187,7 @@
 				A38D24A02956169F00B06DF0 /* Date.swift */,
 				A37ED97C2965ACDD001CF9B1 /* TimeInterval.swift */,
 				A37ED98329660A9C001CF9B1 /* NSNotificationName.swift */,
+				A3886C922969AE700066BA01 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,6 +289,14 @@
 			path = ReasonForCancelation;
 			sourceTree = "<group>";
 		};
+		A3886C8F2969ACF90066BA01 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				A3886C902969AD150066BA01 /* NotificationIdentifier.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -354,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3886C932969AE700066BA01 /* String.swift in Sources */,
 				A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */,
 				A37ED97D2965ACDD001CF9B1 /* TimeInterval.swift in Sources */,
 				A37ED98A29663FEB001CF9B1 /* ReasonForCancelationView.swift in Sources */,
@@ -383,6 +398,7 @@
 				A37ED9792964B938001CF9B1 /* ServiceDetailsView.swift in Sources */,
 				A37ED97A2964B938001CF9B1 /* ServiceDetailsViewModel.swift in Sources */,
 				4C55034729379F3600699589 /* SceneDelegate.swift in Sources */,
+				A3886C912969AD150066BA01 /* NotificationIdentifier.swift in Sources */,
 				A30D83742950EFF500A0C205 /* NextServiceView.swift in Sources */,
 				A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */,
 				A37ED98429660A9C001CF9B1 /* NSNotificationName.swift in Sources */,

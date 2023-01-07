@@ -10,7 +10,7 @@ import Foundation
 
 protocol HomeViewModelProtocol {
     var showServiceCompletion: ((Service) -> Void) { get set }
-    var countdownCompletion: ((Time) -> Void) { get set }
+    var countdownCompletion: ((String) -> Void) { get set }
     var removeServiceCompletion: (() -> Void) { get set }
     var serviceData: ServiceData { get }
 
@@ -23,7 +23,7 @@ protocol HomeViewModelProtocol {
 
 final class HomeViewModel: HomeViewModelProtocol {
     var showServiceCompletion: ((Service) -> Void) = { _ in }
-    var countdownCompletion: ((Time) -> Void) = { _ in }
+    var countdownCompletion: ((String) -> Void) = { _ in }
     var removeServiceCompletion: (() -> Void) = { }
     var serviceData = ServiceData()
 
@@ -63,17 +63,16 @@ final class HomeViewModel: HomeViewModelProtocol {
     }
 
     private func calculateCountdown(start: TimeInterval) {
-        if countdownIsZero {
-            countdownCompletion(Time(days: 0, hours: 0, minutes: 0))
-            return
-        }
-
         let currentDate = Date()
         let startDate = Date(timeIntervalSince1970: start)
         let timeLeft = currentDate-startDate
-        guard let timeLeft = timeLeft.minute else { return }
-        countdownIsZero = timeLeft == 0
-        calculateTime(timeLeft)
+        guard let minuteLeft = timeLeft.minute, let secondLeft = timeLeft.second else { return }
+
+        if minuteLeft <= 0 && secondLeft < 0 {
+            calculateTime(minuteLeft)
+        } else {
+            countdownCompletion("")
+        }
     }
 
     private func calculateTime(_ timeLeft: Int) {
@@ -83,7 +82,25 @@ final class HomeViewModel: HomeViewModelProtocol {
         minutesLeft %= 60
         let time = Time(days: days, hours: hour, minutes: minutesLeft+1)
 
-        countdownCompletion(time)
+        defineCountDownMessage(time)
+    }
+
+    private func defineCountDownMessage(_ time: Time) {
+        var text = ""
+
+        if time.isMoreThanOneDay() {
+            text = "Falta ".makePlural(plural: "Faltam ", count: time.days) + "\(time.days)" + " dia.".makePlural(plural: " dias.", count: time.days)
+        } else if time.isMoreThanHalfDay() {
+            text = "Faltam menos de 1 dia."
+        } else if time.isBrokenHour() {
+            text = "Falta ".makePlural(plural: "Faltam ", count: time.hours) + "\(time.hours)" + " hora".makePlural(plural: " horas", count: time.hours) + " e " + "\(time.minutes)" + " minuto".makePlural(plural: " minutos", count: time.minutes) + " para o atendimento."
+        } else if time.isFullHour() {
+            text = "Falta ".makePlural(plural: "Faltam ", count: time.hours+1) + "\(time.hours)" + " hora".makePlural(plural: " horas", count: time.hours)
+        } else if time.isLessThanOneHour() {
+            text = "Falta ".makePlural(plural: "Faltam ", count: time.minutes) + "\(time.minutes)" + " minuto".makePlural(plural: " minutos", count: time.minutes) + " para o atendimento."
+        }
+
+        countdownCompletion(text)
     }
 
     private func setTimer() {

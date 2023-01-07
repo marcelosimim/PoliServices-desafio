@@ -10,6 +10,10 @@
 import Foundation
 import UIKit
 
+protocol NextServiceViewDelegate: AnyObject {
+    func didTapServiceView()
+}
+
 final class NextServiceView: UIView {
 
     private lazy var nextServiceLabel: UILabel = {
@@ -29,6 +33,7 @@ final class NextServiceView: UIView {
 
     private lazy var serviceView: ServiceView = {
         let view = ServiceView()
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapServiceView)))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -63,43 +68,17 @@ final class NextServiceView: UIView {
         ])
     }
 
+    var delegate: NextServiceViewDelegate?
+
     func setupService(_ service: Service) {
         serviceView.setupService(service)
     }
 
-    func setupCountdown(_ time: Time) {
-          if time.isMoreThanOneDay() {
-              countdownLabel.text = "\(countdownStart(time.days)) \(countdownDay(time.days))"
-          } else if time.isMoreThanHalfDay() {
-              countdownLabel.text = "Faltam menos de 1 dia."
-          } else if time.isBrokenHour() {
-              countdownLabel.text = "\(countdownStart(time.hours)) \(countdownHour(time.hours)) e \(countdownMinutes(time.minutes)) \(countDownEnd())"
-          } else if time.isFullHour() {
-              countdownLabel.text = "\(countdownStart(time.hours+1)) \(countdownHour(time.hours+1))."
-          } else if time.isLessThanOneHour() {
-              countdownLabel.text = "\(countdownStart(time.minutes)) \(countdownMinutes(time.minutes)) \(countDownEnd())"
-          } else {
-              countdownLabel.text = ""
-          }
+    func setupCountdown(_ time: String) {
+        countdownLabel.text = time
     }
 
-    private func countdownStart(_ value: Int) -> String {
-        value == 1 ? "Falta" : "Faltam"
-    }
-
-    private func countdownDay(_ day: Int) -> String {
-        day == 1 ? "\(day) dia." : "\(day) dias."
-    }
-
-    private func countdownHour(_ hour: Int) -> String {
-        hour == 1 ? "\(hour) hora" : "\(hour) horas"
-    }
-
-    private func countdownMinutes(_ minutes: Int) -> String {
-        minutes == 1 ? "\(minutes) minuto" : "\(minutes) minutos"
-    }
-
-    private func countDownEnd() -> String {
-        "para o atendimento."
+    @objc private func didTapServiceView() {
+        delegate?.didTapServiceView()
     }
 }

@@ -16,9 +16,10 @@ protocol HomeViewDelegate: AnyObject {
 
 protocol HomeViewProtocol {
     var delegate: HomeViewDelegate? { get set }
+    var serviceView: NextServiceView { get set }
     func setupServiceStack(hasService: Bool)
     func setupService(_ service: Service)
-    func setupCountdown(_ time: Time)
+    func setupCountdown(_ time: String)
     func setupCurrentDate(_ date: String)
     func setupTotalOfServices(_ total: Int)
 }
@@ -77,7 +78,7 @@ final class HomeView: UIView, HomeViewProtocol {
         return stack
     }()
 
-    private lazy var serviceView: NextServiceView = {
+    lazy var serviceView: NextServiceView = {
         let view = NextServiceView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -170,7 +171,7 @@ final class HomeView: UIView, HomeViewProtocol {
         serviceView.setupService(service)
     }
 
-    func setupCountdown(_ time: Time) {
+    func setupCountdown(_ time: String) {
         serviceView.setupCountdown(time)
     }
 }

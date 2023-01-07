@@ -48,7 +48,7 @@ final class SelectDateView: UIView, SelectDateViewProtocol {
 
     private lazy var endLabel: UILabel = {
         let label = UILabel()
-        label.text = "End"
+        label.text = "Término"
         label.font = .systemFont(ofSize: 17, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

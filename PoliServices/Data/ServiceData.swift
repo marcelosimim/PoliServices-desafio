@@ -12,30 +12,26 @@ import Foundation
 struct ServiceData {
     private let serviceKey = "service"
     private let totalOfServices = "total_of_services"
+    private let defaults = UserDefaults.standard
 
-    func saveService(_ service: Service) {
+    func saveService(_ service: Service, completion: @escaping(() -> ())) {
         if let encoded = try? JSONEncoder().encode(service) {
-            UserDefaults.standard.set(encoded, forKey: serviceKey)
+            defaults.set(encoded, forKey: serviceKey)
             updateTotalOfServices()
-            NotificationManager.shared.requestAutorization { granted in
-                if granted {
-                    NotificationManager.shared.scheduleNotification()
-                }
-            }
         }
     }
 
     func updateTotalOfServices() {
         let current = UserDefaults.standard.integer(forKey: totalOfServices)
-        UserDefaults.standard.set(current+1, forKey: totalOfServices)
+        defaults.set(current+1, forKey: totalOfServices)
     }
 
     func removeService() {
-        UserDefaults.standard.removeObject(forKey: serviceKey)
+        defaults.removeObject(forKey: serviceKey)
     }
 
     func getTotalOfServices() -> Int {
-        UserDefaults.standard.integer(forKey: totalOfServices)
+        defaults.integer(forKey: totalOfServices)
     }
 
     func getService() -> Service? {
@@ -47,12 +43,12 @@ struct ServiceData {
     }
 
     func getServiceDateBegin() -> TimeInterval {
-        let service = UserDefaults.standard.object(forKey: serviceKey) as! Service
+        let service = defaults.object(forKey: serviceKey) as! Service
         return service.startDate
     }
 
     func getServiceDateEnd() -> TimeInterval {
-        let service = UserDefaults.standard.object(forKey: serviceKey) as! Service
+        let service = defaults.object(forKey: serviceKey) as! Service
         return service.endDate
     }
 }

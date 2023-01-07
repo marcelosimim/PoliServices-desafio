@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customView.delegate = self
+        customView.serviceView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(didTapDetailsNotification), name: NSNotification.Name.details, object: nil)
         checkNotification()
     }
@@ -79,5 +80,12 @@ extension HomeViewController: HomeViewDelegate {
         let newService = UINavigationController(rootViewController: NewServiceViewController())
         newService.modalPresentationStyle = .fullScreen
         present(newService, animated: true)
+    }
+}
+
+extension HomeViewController: NextServiceViewDelegate {
+    func didTapServiceView() {
+        guard let service = viewModel.serviceData.getService() else { return }
+        navigationController?.pushViewController(ServiceDetailsViewController(service: service), animated: true)
     }
 }

@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
 
         configureUserNotifications()
+        ServiceData().removeService()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -61,7 +62,11 @@ extension SceneDelegate: UNUserNotificationCenterDelegate {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         UserDefaults.standard.setValue(true, forKey: "hasNotification")
-        NotificationCenter.default.post(name: NSNotification.Name.details, object: nil)
+
+        if response.notification.request.identifier == NotificationIdentifier.details.rawValue {
+            NotificationCenter.default.post(name: NSNotification.Name.details, object: nil)
+        }
+        
         completionHandler()
     }
 

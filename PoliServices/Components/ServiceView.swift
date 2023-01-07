@@ -11,14 +11,6 @@ import Foundation
 import UIKit
 
 final class ServiceView: UIView {
-
-    private lazy var nextServiceLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .bold)
-        label.text = "Próximo Serviço"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
     
     private lazy var serviceNameLabel: UILabel = {
         let label = UILabel()

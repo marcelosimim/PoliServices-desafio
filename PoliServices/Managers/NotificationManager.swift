@@ -28,7 +28,7 @@ struct NotificationManager {
         let dateToNotify = Date(timeIntervalSince1970: service.startDate).addingTimeInterval((15*60)*(-1))
         let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute,. second], from: dateToNotify)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: NotificationIdentifier.details.rawValue, content: content, trigger: trigger)
 
         center.add(request) { error in
             if let error = error {
