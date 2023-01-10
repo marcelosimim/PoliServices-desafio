@@ -18,6 +18,7 @@ struct ServiceData {
         if let encoded = try? JSONEncoder().encode(service) {
             defaults.set(encoded, forKey: serviceKey)
             updateTotalOfServices()
+            completion()
         }
     }
 

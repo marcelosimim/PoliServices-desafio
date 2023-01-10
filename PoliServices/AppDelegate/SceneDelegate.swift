@@ -21,7 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
 
         configureUserNotifications()
-        ServiceData().removeService()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

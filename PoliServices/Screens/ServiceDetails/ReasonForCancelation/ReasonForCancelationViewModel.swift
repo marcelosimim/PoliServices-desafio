@@ -18,12 +18,11 @@ protocol ReasonForCancelationViewModelProtocol {
 
     func fetchReasons()
     func didSelectCell(_ index: Int)
-    func sendReason()
-    func sendReason(_ text: String)
+    func sendReason(_ text: String?)
 }
 
 final class ReasonForCancelationViewModel: ReasonForCancelationViewModelProtocol {
-    private let devpoliServiceAPI = DevPoliServiceAPI()
+    private let networkManager = NetworkManager()
     private let serviceData = ServiceData()
     var selectedCell: Reason? = nil
     var reasons: [Reason] = []
@@ -33,7 +32,7 @@ final class ReasonForCancelationViewModel: ReasonForCancelationViewModelProtocol
     var didFinishSendingReasonsFailure: ((String, String) -> ()) = { _, _ in }
 
     func fetchReasons() {
-        devpoliServiceAPI.fetchReasons { [weak self] result in
+        networkManager.fetchReasons { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let reasons):
@@ -49,38 +48,28 @@ final class ReasonForCancelationViewModel: ReasonForCancelationViewModelProtocol
         selectedCell = reasons[index]
     }
 
-    func sendReason() {
+    func sendReason(_ text: String?) {
         guard let selectedCell else {
             didFinishSendingReasonsFailure("Motivo não selecionado.", "Escolha um motivo antes de prosseguir.")
             return
         }
 
-        devpoliServiceAPI.sendReason(reason: selectedCell, text: nil) { [weak self] error in
+        networkManager.sendReason(reason: selectedCell, text: nil) { [weak self] error in
             guard let self else { return }
-
-            if let error = error {
+            if let error {
                 self.didFinishSendingReasonsFailure("Erro ao enviar motivo.", error.localizedDescription)
                 return
             }
 
+            if let text {
+                if !self.isNumberOfCharactersValid(text) {
+                    self.didFinishSendingReasonsFailure("Número de caracteres inválido.", "Por favor, preencha novamente respeitando os limites definidos.")
+                    return
+                }
+            }
+
             self.serviceData.removeService()
             self.didFinishSendingReasonsSuccess()
-        }
-    }
-
-    func sendReason(_ text: String) {
-        guard let selectedCell else {
-            didFinishSendingReasonsFailure("Motivo não selecionado.", "Escolha um motivo antes de prosseguir.")
-            return
-        }
-
-        if !isNumberOfCharactersValid(text) {
-            didFinishSendingReasonsFailure("Número de caracteres inválido.", "Por favor, preencha novamente respeitando os limites definidos.")
-            return
-        }
-
-        devpoliServiceAPI.sendReason(reason: selectedCell, text: text) { error in
-
         }
     }
 

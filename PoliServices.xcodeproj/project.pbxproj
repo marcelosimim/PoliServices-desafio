@@ -28,7 +28,6 @@
 		A30D83692950CF7500A0C205 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83682950CF7500A0C205 /* InfoView.swift */; };
 		A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D836B2950D5C300A0C205 /* ServiceView.swift */; };
 		A30D83742950EFF500A0C205 /* NextServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83712950EFF500A0C205 /* NextServiceView.swift */; };
-		A364A8D92954BE40007B803E /* DevPoliServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8D82954BE40007B803E /* DevPoliServiceAPI.swift */; };
 		A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */; };
 		A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */; };
 		A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8E12954CA70007B803E /* ServiceLayout.swift */; };
@@ -47,6 +46,16 @@
 		A38D249F2955E60500B06DF0 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D249E2955E60500B06DF0 /* Int.swift */; };
 		A38D24A12956169F00B06DF0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D24A02956169F00B06DF0 /* Date.swift */; };
 		A38D24A3295631B400B06DF0 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38D24A2295631B400B06DF0 /* Time.swift */; };
+		A3951ECB296C88A400392C7D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3951ECA296C88A400392C7D /* HTTPMethod.swift */; };
+		A3951ECD296C891A00392C7D /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3951ECC296C891A00392C7D /* HTTPTask.swift */; };
+		A3951ECF296C8A2C00392C7D /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3951ECE296C8A2C00392C7D /* EndPointType.swift */; };
+		A3951ED2296C8B4600392C7D /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3951ED1296C8B4600392C7D /* ParameterEncoding.swift */; };
+		A3951ED4296C8CCA00392C7D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3951ED3296C8CCA00392C7D /* NetworkError.swift */; };
+		A3951ED6296C8D1B00392C7D /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3951ED5296C8D1B00392C7D /* URLParameterEncoder.swift */; };
+		A3951ED8296C8E7700392C7D /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3951ED7296C8E7700392C7D /* JSONParameterEncoder.swift */; };
+		A3951EDC296C8FFA00392C7D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3951EDB296C8FFA00392C7D /* Router.swift */; };
+		A3951EDF296C931300392C7D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3951EDE296C931300392C7D /* NetworkManager.swift */; };
+		A3951EE7296CACBA00392C7D /* DevPoliServiceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3951EE6296CACBA00392C7D /* DevPoliServiceEndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +82,6 @@
 		A30D83682950CF7500A0C205 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		A30D836B2950D5C300A0C205 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		A30D83712950EFF500A0C205 /* NextServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextServiceView.swift; sourceTree = "<group>"; };
-		A364A8D82954BE40007B803E /* DevPoliServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevPoliServiceAPI.swift; sourceTree = "<group>"; };
 		A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIModel.swift; sourceTree = "<group>"; };
 		A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIResult.swift; sourceTree = "<group>"; };
 		A364A8E12954CA70007B803E /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
@@ -92,6 +100,16 @@
 		A38D249E2955E60500B06DF0 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		A38D24A02956169F00B06DF0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A38D24A2295631B400B06DF0 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		A3951ECA296C88A400392C7D /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		A3951ECC296C891A00392C7D /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		A3951ECE296C8A2C00392C7D /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		A3951ED1296C8B4600392C7D /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		A3951ED3296C8CCA00392C7D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A3951ED5296C8D1B00392C7D /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		A3951ED7296C8E7700392C7D /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		A3951EDB296C8FFA00392C7D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A3951EDE296C931300392C7D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A3951EE6296CACBA00392C7D /* DevPoliServiceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevPoliServiceEndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,8 +254,11 @@
 		A364A8D72954BDFF007B803E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A3951ED0296C8B3500392C7D /* Encoding */,
+				A3951EE5296CACA500392C7D /* EndPoint */,
+				A3951EDD296C930900392C7D /* Manager */,
+				A3951EC9296C889500392C7D /* Service */,
 				A364A8DC2954C3AD007B803E /* Model */,
-				A364A8D82954BE40007B803E /* DevPoliServiceAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -292,9 +313,47 @@
 		A3886C8F2969ACF90066BA01 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				A3951ED3296C8CCA00392C7D /* NetworkError.swift */,
 				A3886C902969AD150066BA01 /* NotificationIdentifier.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		A3951EC9296C889500392C7D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A3951ECA296C88A400392C7D /* HTTPMethod.swift */,
+				A3951ECC296C891A00392C7D /* HTTPTask.swift */,
+				A3951ECE296C8A2C00392C7D /* EndPointType.swift */,
+				A3951EDB296C8FFA00392C7D /* Router.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A3951ED0296C8B3500392C7D /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				A3951ED1296C8B4600392C7D /* ParameterEncoding.swift */,
+				A3951ED5296C8D1B00392C7D /* URLParameterEncoder.swift */,
+				A3951ED7296C8E7700392C7D /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		A3951EDD296C930900392C7D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A3951EDE296C931300392C7D /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		A3951EE5296CACA500392C7D /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				A3951EE6296CACBA00392C7D /* DevPoliServiceEndPoint.swift */,
+			);
+			path = EndPoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,41 +427,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3951ED2296C8B4600392C7D /* ParameterEncoding.swift in Sources */,
 				A3886C932969AE700066BA01 /* String.swift in Sources */,
 				A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */,
 				A37ED97D2965ACDD001CF9B1 /* TimeInterval.swift in Sources */,
 				A37ED98A29663FEB001CF9B1 /* ReasonForCancelationView.swift in Sources */,
+				A3951ED8296C8E7700392C7D /* JSONParameterEncoder.swift in Sources */,
 				A37ED98D296646C7001CF9B1 /* Reason.swift in Sources */,
 				A30D83562950ABDD00A0C205 /* NewServiceViewModel.swift in Sources */,
 				A30D83672950CD2500A0C205 /* HomeViewModel.swift in Sources */,
 				A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */,
 				A30D83442950964100A0C205 /* SelectDateViewModel.swift in Sources */,
+				A3951ECF296C8A2C00392C7D /* EndPointType.swift in Sources */,
 				A30D83542950ABDD00A0C205 /* NewServiceViewController.swift in Sources */,
+				A3951ED6296C8D1B00392C7D /* URLParameterEncoder.swift in Sources */,
 				A37ED9812965F471001CF9B1 /* NotificationManager.swift in Sources */,
 				A30D834D2950A8B100A0C205 /* ServiceData.swift in Sources */,
 				A30D83692950CF7500A0C205 /* InfoView.swift in Sources */,
-				A364A8D92954BE40007B803E /* DevPoliServiceAPI.swift in Sources */,
 				A30D83662950CD2500A0C205 /* HomeView.swift in Sources */,
 				A38D24A12956169F00B06DF0 /* Date.swift in Sources */,
 				A30D83422950964100A0C205 /* SelectDateViewController.swift in Sources */,
 				A30D834F2950A90900A0C205 /* Service.swift in Sources */,
+				A3951EE7296CACBA00392C7D /* DevPoliServiceEndPoint.swift in Sources */,
 				A30D83432950964100A0C205 /* SelectDateView.swift in Sources */,
 				A37ED98B29663FEB001CF9B1 /* ReasonForCancelationViewModel.swift in Sources */,
 				A38D24A3295631B400B06DF0 /* Time.swift in Sources */,
 				A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
+				A3951ECB296C88A400392C7D /* HTTPMethod.swift in Sources */,
 				A37ED9782964B938001CF9B1 /* ServiceDetailsViewController.swift in Sources */,
 				A30D83592950AE1700A0C205 /* ServiceCollectionViewCell.swift in Sources */,
 				A38D249F2955E60500B06DF0 /* Int.swift in Sources */,
+				A3951EDC296C8FFA00392C7D /* Router.swift in Sources */,
 				A30D83652950CD2500A0C205 /* HomeViewController.swift in Sources */,
 				A37ED9792964B938001CF9B1 /* ServiceDetailsView.swift in Sources */,
 				A37ED97A2964B938001CF9B1 /* ServiceDetailsViewModel.swift in Sources */,
+				A3951EDF296C931300392C7D /* NetworkManager.swift in Sources */,
+				A3951ED4296C8CCA00392C7D /* NetworkError.swift in Sources */,
 				4C55034729379F3600699589 /* SceneDelegate.swift in Sources */,
 				A3886C912969AD150066BA01 /* NotificationIdentifier.swift in Sources */,
 				A30D83742950EFF500A0C205 /* NextServiceView.swift in Sources */,
 				A30D836E2950D5C300A0C205 /* ServiceView.swift in Sources */,
 				A37ED98429660A9C001CF9B1 /* NSNotificationName.swift in Sources */,
 				A30D83602950AEC700A0C205 /* UIImage.swift in Sources */,
+				A3951ECD296C891A00392C7D /* HTTPTask.swift in Sources */,
 				A30D834A2950A35B00A0C205 /* UIColor.swift in Sources */,
 				A37ED98929663FEB001CF9B1 /* ReasonForCancelationViewController.swift in Sources */,
 				A30D83552950ABDD00A0C205 /* NewServiceView.swift in Sources */,

@@ -17,13 +17,13 @@ protocol NewServiceViewModelProtocol {
 }
 
 final class NewServiceViewModel: NewServiceViewModelProtocol {
-    private let serviceAPI = DevPoliServiceAPI()
+    private let networkManager = NetworkManager()
     var services: [ServiceLayout] = []
     var didFinishFetchingServicesSuccess: (() -> ()) = { }
     var didFinishFetchingServicesFailure: ((String) -> ()) = { _ in }
 
     func fetchServices() {
-        serviceAPI.fetchServices { [weak self] result in
+        networkManager.fetchServices { [weak self] result in
             switch result {
             case .success(let services):
                 self?.updateServices(services)

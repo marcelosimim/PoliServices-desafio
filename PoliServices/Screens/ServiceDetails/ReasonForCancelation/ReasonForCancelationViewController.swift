@@ -103,6 +103,6 @@ extension ReasonForCancelationViewController: UITableViewDelegate, UITableViewDa
 
 extension ReasonForCancelationViewController: ReasonForCancelationViewDelegate {
     func didTapSend() {
-        viewModel.sendReason()
+        viewModel.sendReason(nil)
     }
 }
