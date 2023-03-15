@@ -90,7 +90,7 @@ final class HomeViewModel: HomeViewModelProtocol {
 
     private func defineCountDownMessage(_ time: Time) {
         var text = ""
-
+        print(time, "time")
         if time.isMoreThanOneDay() {
             text = "Falta ".makePlural(plural: "Faltam ", count: time.days) + "\(time.days)" + " dia.".makePlural(plural: " dias.", count: time.days)
         } else if time.isMoreThanHalfDay() {

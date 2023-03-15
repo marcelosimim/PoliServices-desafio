@@ -32,6 +32,8 @@
 		A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */; };
 		A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */; };
 		A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8E12954CA70007B803E /* ServiceLayout.swift */; };
+		A37B963029C2630B00944414 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B962F29C2630B00944414 /* DependencyInjector.swift */; };
+		A37B963329C287F900944414 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B963229C287F900944414 /* ServiceMock.swift */; };
 		A37ED9782964B938001CF9B1 /* ServiceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9752964B938001CF9B1 /* ServiceDetailsViewController.swift */; };
 		A37ED9792964B938001CF9B1 /* ServiceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9762964B938001CF9B1 /* ServiceDetailsView.swift */; };
 		A37ED97A2964B938001CF9B1 /* ServiceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */; };
@@ -105,6 +107,8 @@
 		A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIModel.swift; sourceTree = "<group>"; };
 		A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIResult.swift; sourceTree = "<group>"; };
 		A364A8E12954CA70007B803E /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
+		A37B962F29C2630B00944414 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		A37B963229C287F900944414 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		A37ED9752964B938001CF9B1 /* ServiceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewController.swift; sourceTree = "<group>"; };
 		A37ED9762964B938001CF9B1 /* ServiceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsView.swift; sourceTree = "<group>"; };
 		A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -427,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				A3F3498829C22D85003E299A /* AppContainer.swift */,
+				A37B962F29C2630B00944414 /* DependencyInjector.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				A3F3498E29C232A1003E299A /* ServiceDataMock.swift */,
+				A37B963229C287F900944414 /* ServiceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -676,6 +682,7 @@
 				A38D24A12956169F00B06DF0 /* Date.swift in Sources */,
 				A30D83422950964100A0C205 /* SelectDateViewController.swift in Sources */,
 				A30D834F2950A90900A0C205 /* Service.swift in Sources */,
+				A37B963029C2630B00944414 /* DependencyInjector.swift in Sources */,
 				A3951EE7296CACBA00392C7D /* DevPoliServiceEndPoint.swift in Sources */,
 				A30D83432950964100A0C205 /* SelectDateView.swift in Sources */,
 				A37ED98B29663FEB001CF9B1 /* ReasonForCancelationViewModel.swift in Sources */,
@@ -712,6 +719,7 @@
 				A3F3498629C22A32003E299A /* HomeViewModelTests.swift in Sources */,
 				A3F3498C29C231FD003E299A /* AppContainer.swift in Sources */,
 				A3F3498F29C232A1003E299A /* ServiceDataMock.swift in Sources */,
+				A37B963329C287F900944414 /* ServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

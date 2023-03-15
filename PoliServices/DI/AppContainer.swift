@@ -9,14 +9,22 @@ import Foundation
 import Swinject
 
 class AppContainer {
-    public static let shared: Container = {
-        let container = Container()
+    public static let shared = Container()
 
-        container.register(ServiceDataProtocol.self) { _ in ServiceData() }
+    public static func resolve<Service>(_ serviceType: Service.Type) -> Service {
+        if let service = shared.resolve(serviceType) {
+            return service
+        }
+        fatalError("DI Manager: Service resolution failed")
+    }
 
-        // MARK: - Home
-        container.register(HomeViewModelProtocol.self) { r in HomeViewModel(serviceData: r.resolve(ServiceDataProtocol.self)!) }
+    public static func register<Service>(_ serviceType: Service.Type, factory: @escaping (Resolver) -> Service) -> ServiceEntry<Service> {
+        return shared.register(serviceType, factory: factory)
+    }
 
-        return container
-    }()
+    public static func removeAll() {
+        shared.removeAll()
+    }
 }
+
+

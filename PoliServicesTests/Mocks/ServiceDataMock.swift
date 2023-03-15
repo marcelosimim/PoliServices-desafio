@@ -18,8 +18,9 @@ class ServiceDataMock: ServiceDataProtocol {
 
     }
 
+    var removeServiceCount = 0
     func removeService() {
-
+        removeServiceCount += 1
     }
 
     let totalOfServices = 100
@@ -30,13 +31,15 @@ class ServiceDataMock: ServiceDataProtocol {
         return totalOfServices
     }
 
-    var getServiceCount = 0
-    func getService() -> PoliServices.Service? {
-        let startDate = Date()
-        let endDate = Calendar.current.date(byAdding: .hour, value: 1, to: startDate)!
+    // MARK: - getService
 
+    var getServiceCount = 0
+    var getServiceHasService = true
+    var service = ServiceMock.serviceWithFullHour()
+
+    func getService() -> PoliServices.Service? {
         getServiceCount += 1
-        return Service(startDate: startDate.timeIntervalSince1970, endDate: endDate.timeIntervalSince1970, layout: ServiceLayout(icon: "", color: "", name: "", duration: 0))
+        return getServiceHasService ? service : nil
     }
 
     func getServiceDateBegin() -> TimeInterval {
