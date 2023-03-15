@@ -1,0 +1,6 @@
+framework module Pods_PoliServicesTests {
+  umbrella header "Pods-PoliServicesTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
