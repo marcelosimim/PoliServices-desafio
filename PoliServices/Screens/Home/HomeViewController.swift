@@ -6,11 +6,12 @@
 //  Created by Marcelo Simim Santos on 12/19/22.
 //
 //
+import Swinject
 import UIKit
 
 class HomeViewController: UIViewController {
     private lazy var customView: HomeViewProtocol = HomeView()
-    private lazy var viewModel: HomeViewModelProtocol = HomeViewModel()
+    private lazy var viewModel: HomeViewModelProtocol = AppContainer.shared.resolve(HomeViewModelProtocol.self)!
 
     override func viewDidLoad() {
         super.viewDidLoad()

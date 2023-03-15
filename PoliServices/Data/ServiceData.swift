@@ -1,5 +1,5 @@
 //
-//  
+//
 //  Services.swift
 //  PoliServices
 //
@@ -9,7 +9,17 @@
 
 import Foundation
 
-struct ServiceData {
+protocol ServiceDataProtocol {
+    func saveService(_ service: Service, completion: @escaping(() -> ()))
+    func updateTotalOfServices()
+    func removeService()
+    func getTotalOfServices() -> Int
+    func getService() -> Service?
+    func getServiceDateBegin() -> TimeInterval
+    func getServiceDateEnd() -> TimeInterval
+}
+
+class ServiceData: ServiceDataProtocol {
     private let serviceKey = "service"
     private let totalOfServices = "total_of_services"
     private let defaults = UserDefaults.standard
@@ -53,4 +63,5 @@ struct ServiceData {
         return service.endDate
     }
 }
+
 
