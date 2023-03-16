@@ -29,7 +29,7 @@ struct ServiceLayout: Codable {
         return "\(hours.formattedTimeDigits()):\(minutes.formattedTimeDigits())h"
     }
 
-    static func fromServiceAPIModel(_ model: ServiceAPIModel) -> ServiceLayout? {
-        return ServiceLayout(icon: model.icon, color: model.color, name: model.name, duration: model.duration)
+    static func fromServiceAPIModel(_ model: ServiceAPIModel) -> ServiceLayout {
+        ServiceLayout(icon: model.icon, color: model.color, name: model.name, duration: model.duration)
     }
 }

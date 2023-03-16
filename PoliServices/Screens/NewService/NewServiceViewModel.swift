@@ -9,6 +9,7 @@
 import Foundation
 
 protocol NewServiceViewModelProtocol {
+    var networkManager: NetworkManagerProtocol { get }
     var services: [ServiceLayout] { get }
     var didFinishFetchingServicesSuccess: (() -> ()) { get set }
     var didFinishFetchingServicesFailure: ((String) -> ()) { get set }
@@ -17,10 +18,14 @@ protocol NewServiceViewModelProtocol {
 }
 
 final class NewServiceViewModel: NewServiceViewModelProtocol {
-    private let networkManager = NetworkManager()
+    var networkManager: NetworkManagerProtocol
     var services: [ServiceLayout] = []
     var didFinishFetchingServicesSuccess: (() -> ()) = { }
     var didFinishFetchingServicesFailure: ((String) -> ()) = { _ in }
+
+    init(networkManager: NetworkManagerProtocol) {
+        self.networkManager = networkManager
+    }
 
     func fetchServices() {
         networkManager.fetchServices { [weak self] result in
@@ -35,9 +40,7 @@ final class NewServiceViewModel: NewServiceViewModelProtocol {
 
     private func updateServices(_ result: ServiceAPIResult) {
         for service in result.data {
-            guard let cellModel = ServiceLayout.fromServiceAPIModel(service) else {
-                return
-            }
+            let cellModel = ServiceLayout.fromServiceAPIModel(service)
             self.services.append(cellModel)
         }
 

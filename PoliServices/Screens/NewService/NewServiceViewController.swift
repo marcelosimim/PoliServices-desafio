@@ -7,10 +7,11 @@
 //
 //
 import UIKit
+import Swinject
 
 class NewServiceViewController: UIViewController {
     private lazy var customView: NewServiceViewProtocol = NewServiceView()
-    private lazy var viewModel: NewServiceViewModelProtocol = NewServiceViewModel()
+    private lazy var viewModel: NewServiceViewModelProtocol = AppContainer.shared.resolve(NewServiceViewModelProtocol.self)!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,11 +16,14 @@ protocol ReasonAPIProtocol {
     func sendReason(reason: Reason, text: String?, completion: @escaping((Error?) -> ()))
 }
 
-struct NetworkManager {
+protocol NetworkManagerProtocol: ServiceAPIProtocol, ReasonAPIProtocol { }
+
+class NetworkManager: NetworkManagerProtocol {
     private let router = Router<DevPoliApi>()
 }
 
-extension NetworkManager: ServiceAPIProtocol {
+// MARK: - ServiceAPIProtocol
+extension NetworkManager {
     func fetchServices(completion: @escaping (Result<ServiceAPIResult, Error>) -> ()) {
         router.request(.service) { data, response, error in
             guard let data = data else {
@@ -48,7 +51,8 @@ extension NetworkManager: ServiceAPIProtocol {
     }
 }
 
-extension NetworkManager: ReasonAPIProtocol {
+// MARK: -  ReasonAPIProtocol
+extension NetworkManager {
     func fetchReasons(completion: @escaping (Result<[Reason], Error>) -> ()) {
         router.request(.reason) { data, response, error in
             guard let data = data else {

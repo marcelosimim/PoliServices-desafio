@@ -34,6 +34,8 @@
 		A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8E12954CA70007B803E /* ServiceLayout.swift */; };
 		A37B963029C2630B00944414 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B962F29C2630B00944414 /* DependencyInjector.swift */; };
 		A37B963329C287F900944414 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B963229C287F900944414 /* ServiceMock.swift */; };
+		A37B963629C3C0F700944414 /* NewServiceViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B963529C3C0F700944414 /* NewServiceViewModelTests.swift */; };
+		A37B963829C3C36700944414 /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B963729C3C36700944414 /* NetworkManagerMock.swift */; };
 		A37ED9782964B938001CF9B1 /* ServiceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9752964B938001CF9B1 /* ServiceDetailsViewController.swift */; };
 		A37ED9792964B938001CF9B1 /* ServiceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9762964B938001CF9B1 /* ServiceDetailsView.swift */; };
 		A37ED97A2964B938001CF9B1 /* ServiceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */; };
@@ -109,6 +111,8 @@
 		A364A8E12954CA70007B803E /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
 		A37B962F29C2630B00944414 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		A37B963229C287F900944414 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
+		A37B963529C3C0F700944414 /* NewServiceViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewServiceViewModelTests.swift; sourceTree = "<group>"; };
+		A37B963729C3C36700944414 /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
 		A37ED9752964B938001CF9B1 /* ServiceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewController.swift; sourceTree = "<group>"; };
 		A37ED9762964B938001CF9B1 /* ServiceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsView.swift; sourceTree = "<group>"; };
 		A37ED9772964B938001CF9B1 /* ServiceDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -318,6 +322,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A37B963429C3C0E100944414 /* NewService */ = {
+			isa = PBXGroup;
+			children = (
+				A37B963529C3C0F700944414 /* NewServiceViewModelTests.swift */,
+			);
+			path = NewService;
+			sourceTree = "<group>";
+		};
 		A37ED9742964B928001CF9B1 /* ServiceDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +426,7 @@
 		A3F3498329C22A22003E299A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A37B963429C3C0E100944414 /* NewService */,
 				A3F3498429C22A24003E299A /* Home */,
 			);
 			path = Screens;
@@ -449,6 +462,7 @@
 			children = (
 				A3F3498E29C232A1003E299A /* ServiceDataMock.swift */,
 				A37B963229C287F900944414 /* ServiceMock.swift */,
+				A37B963729C3C36700944414 /* NetworkManagerMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -716,7 +730,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A37B963629C3C0F700944414 /* NewServiceViewModelTests.swift in Sources */,
 				A3F3498629C22A32003E299A /* HomeViewModelTests.swift in Sources */,
+				A37B963829C3C36700944414 /* NetworkManagerMock.swift in Sources */,
 				A3F3498C29C231FD003E299A /* AppContainer.swift in Sources */,
 				A3F3498F29C232A1003E299A /* ServiceDataMock.swift in Sources */,
 				A37B963329C287F900944414 /* ServiceMock.swift in Sources */,
