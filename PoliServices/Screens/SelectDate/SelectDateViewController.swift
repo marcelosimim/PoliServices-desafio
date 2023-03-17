@@ -10,7 +10,7 @@ import UIKit
 
 class SelectDateViewController: UIViewController {
     private lazy var customView: SelectDateViewProtocol = SelectDateView()
-    private lazy var viewModel: SelectDateViewModelProtocol = SelectDateViewModel()
+    private lazy var viewModel: SelectDateViewModelProtocol = AppContainer.shared.resolve(SelectDateViewModelProtocol.self)!
     private let service: ServiceLayout
 
     init(service: ServiceLayout) {

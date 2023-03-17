@@ -12,16 +12,24 @@ protocol SelectDateViewModelProtocol {
     var endDate: TimeInterval? { get }
     var saveServiceCompletion: (() -> Void) { get set }
     var didFinishCalculationEndTime: ((String) -> Void) { get set }
+    var notificationManager: NotificationManagerProtocol { get }
+    var serviceData: ServiceDataProtocol { get }
 
     func setupEndTime(selectedDate: Date, duration: Int)
     func save(_ service: Service)
 }
 
 final class SelectDateViewModel: SelectDateViewModelProtocol {
-    private let serviceData = ServiceData()
+    var notificationManager: NotificationManagerProtocol
+    var serviceData: ServiceDataProtocol
     var endDate: TimeInterval?
     var saveServiceCompletion: (() -> Void) = { }
     var didFinishCalculationEndTime: ((String) -> Void) = { _ in }
+
+    init(notificationManager: NotificationManagerProtocol, serviceData: ServiceDataProtocol) {
+        self.notificationManager = notificationManager
+        self.serviceData = serviceData
+    }
 
     func setupEndTime(selectedDate: Date, duration: Int) {
         let endDate = Calendar.current.date(byAdding: .minute, value: duration, to: selectedDate) ?? Date()
@@ -34,9 +42,9 @@ final class SelectDateViewModel: SelectDateViewModelProtocol {
     }
 
     func save(_ service: Service) {
-        NotificationManager.shared.requestAutorization { _ in }
+        notificationManager.shared.requestAutorization { _ in }
         serviceData.saveService(service) { [weak self] in
-            NotificationManager.shared.scheduleNotification()
+            self?.notificationManager.shared.scheduleNotification()
             self?.saveServiceCompletion()
         }
     }
