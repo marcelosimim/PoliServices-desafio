@@ -9,14 +9,13 @@ import Foundation
 import UserNotifications
 
 protocol NotificationManagerProtocol {
-    var shared: NotificationManager { get }
     func requestAutorization(completion: @escaping  (Bool) -> Void)
     func scheduleNotification()
 }
 
 class NotificationManager: NotificationManagerProtocol {
     private let center = UNUserNotificationCenter.current()
-    var shared = NotificationManager()
+    static let shared = NotificationManager()
 
     func requestAutorization(completion: @escaping  (Bool) -> Void) {
         center.requestAuthorization(options: [.alert, .sound]) { granted, _ in

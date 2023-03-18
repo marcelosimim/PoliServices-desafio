@@ -12,7 +12,7 @@ class DependecyInjector {
     static func inject(container: Container) {
         container.register(ServiceDataProtocol.self) { _ in ServiceData() }
         container.register(NetworkManagerProtocol.self) { _ in NetworkManager() }
-        container.register(NotificationManagerProtocol.self) { _ in NotificationManager() }
+        container.register(NotificationManagerProtocol.self) { _ in NotificationManager.shared }
 
         // MARK: - Home
         container.register(HomeViewModelProtocol.self) { r in HomeViewModel(serviceData: r.resolve(ServiceDataProtocol.self)!) }
