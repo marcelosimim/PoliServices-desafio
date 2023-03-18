@@ -10,8 +10,10 @@ import Foundation
 
 class ServiceDataMock: ServiceDataProtocol {
 
+    var saveServiceCount = 0
     func saveService(_ service: PoliServices.Service, completion: @escaping (() -> ())) {
-
+        saveServiceCount += 1
+        completion()
     }
 
     func updateTotalOfServices() {

@@ -42,9 +42,9 @@ final class SelectDateViewModel: SelectDateViewModelProtocol {
     }
 
     func save(_ service: Service) {
-        notificationManager.shared.requestAutorization { _ in }
+        notificationManager.requestAutorization { _ in }
         serviceData.saveService(service) { [weak self] in
-            self?.notificationManager.shared.scheduleNotification()
+            self?.notificationManager.scheduleNotification()
             self?.saveServiceCompletion()
         }
     }
