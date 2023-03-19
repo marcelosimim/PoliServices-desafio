@@ -22,5 +22,8 @@ class DependecyInjector {
 
         // MARK: - Select Date
         container.register(SelectDateViewModelProtocol.self) { r in SelectDateViewModel(notificationManager: r.resolve(NotificationManager.self)!, serviceData: r.resolve(ServiceDataProtocol.self)!)}
+
+        // MARK: - Service Details
+        container.register(ServiceDetailsViewModelProtocol.self) { _ in ServiceDetailsViewModel() }
     }
 }

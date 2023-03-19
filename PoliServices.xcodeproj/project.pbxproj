@@ -31,6 +31,7 @@
 		A30D83742950EFF500A0C205 /* NextServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D83712950EFF500A0C205 /* NextServiceView.swift */; };
 		A3422C2629C502E8002ACBCA /* SelectDateViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3422C2529C502E8002ACBCA /* SelectDateViewModelTests.swift */; };
 		A3422C2829C503A8002ACBCA /* NotificationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3422C2729C503A8002ACBCA /* NotificationManagerMock.swift */; };
+		A34EB29229C7CA25004DDA87 /* ServiceDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34EB29129C7CA25004DDA87 /* ServiceDetailsViewModelTests.swift */; };
 		A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */; };
 		A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */; };
 		A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8E12954CA70007B803E /* ServiceLayout.swift */; };
@@ -110,6 +111,7 @@
 		A30D83712950EFF500A0C205 /* NextServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextServiceView.swift; sourceTree = "<group>"; };
 		A3422C2529C502E8002ACBCA /* SelectDateViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewModelTests.swift; sourceTree = "<group>"; };
 		A3422C2729C503A8002ACBCA /* NotificationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerMock.swift; sourceTree = "<group>"; };
+		A34EB29129C7CA25004DDA87 /* ServiceDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIModel.swift; sourceTree = "<group>"; };
 		A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIResult.swift; sourceTree = "<group>"; };
 		A364A8E12954CA70007B803E /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
@@ -312,6 +314,14 @@
 			path = SelectDate;
 			sourceTree = "<group>";
 		};
+		A34EB29029C7CA10004DDA87 /* ServiceDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A34EB29129C7CA25004DDA87 /* ServiceDetailsViewModelTests.swift */,
+			);
+			path = ServiceDetails;
+			sourceTree = "<group>";
+		};
 		A364A8D72954BDFF007B803E /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +448,7 @@
 		A3F3498329C22A22003E299A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A34EB29029C7CA10004DDA87 /* ServiceDetails */,
 				A3422C2429C502DA002ACBCA /* SelectDate */,
 				A37B963429C3C0E100944414 /* NewService */,
 				A3F3498429C22A24003E299A /* Home */,
@@ -747,6 +758,7 @@
 				A37B963629C3C0F700944414 /* NewServiceViewModelTests.swift in Sources */,
 				A3F3498629C22A32003E299A /* HomeViewModelTests.swift in Sources */,
 				A37B963829C3C36700944414 /* NetworkManagerMock.swift in Sources */,
+				A34EB29229C7CA25004DDA87 /* ServiceDetailsViewModelTests.swift in Sources */,
 				A3F3498C29C231FD003E299A /* AppContainer.swift in Sources */,
 				A3422C2829C503A8002ACBCA /* NotificationManagerMock.swift in Sources */,
 				A3F3498F29C232A1003E299A /* ServiceDataMock.swift in Sources */,
