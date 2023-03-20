@@ -22,7 +22,11 @@ protocol ServiceDataProtocol {
 class ServiceData: ServiceDataProtocol {
     private let serviceKey = "service"
     private let totalOfServices = "total_of_services"
-    private let defaults = UserDefaults.standard
+    private let defaults: UserDefaults
+
+    init(defaults: UserDefaults = UserDefaults.standard) {
+        self.defaults = defaults
+    }
 
     func saveService(_ service: Service, completion: @escaping(() -> ())) {
         if let encoded = try? JSONEncoder().encode(service) {
@@ -33,7 +37,7 @@ class ServiceData: ServiceDataProtocol {
     }
 
     func updateTotalOfServices() {
-        let current = UserDefaults.standard.integer(forKey: totalOfServices)
+        let current = defaults.integer(forKey: totalOfServices)
         defaults.set(current+1, forKey: totalOfServices)
     }
 
@@ -46,7 +50,7 @@ class ServiceData: ServiceDataProtocol {
     }
 
     func getService() -> Service? {
-        if let data = UserDefaults.standard.object(forKey: serviceKey) as? Data,
+        if let data = defaults.object(forKey: serviceKey) as? Data,
            let service = try? JSONDecoder().decode(Service.self, from: data) {
             return service
         }

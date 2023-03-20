@@ -33,6 +33,8 @@
 		A3422C2829C503A8002ACBCA /* NotificationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3422C2729C503A8002ACBCA /* NotificationManagerMock.swift */; };
 		A34EB29229C7CA25004DDA87 /* ServiceDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34EB29129C7CA25004DDA87 /* ServiceDetailsViewModelTests.swift */; };
 		A34EB29529C7CD43004DDA87 /* ReasonForCancelationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34EB29429C7CD43004DDA87 /* ReasonForCancelationViewModelTests.swift */; };
+		A34EB29729C89015004DDA87 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34EB29629C89015004DDA87 /* UserDefaultsMock.swift */; };
+		A34EB29A29C8910F004DDA87 /* ServiceDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34EB29929C8910F004DDA87 /* ServiceDataTests.swift */; };
 		A364A8DB2954C1FD007B803E /* ServiceAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */; };
 		A364A8DE2954C3C4007B803E /* ServiceAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */; };
 		A364A8E22954CA70007B803E /* ServiceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A364A8E12954CA70007B803E /* ServiceLayout.swift */; };
@@ -114,6 +116,8 @@
 		A3422C2729C503A8002ACBCA /* NotificationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerMock.swift; sourceTree = "<group>"; };
 		A34EB29129C7CA25004DDA87 /* ServiceDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		A34EB29429C7CD43004DDA87 /* ReasonForCancelationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonForCancelationViewModelTests.swift; sourceTree = "<group>"; };
+		A34EB29629C89015004DDA87 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
+		A34EB29929C8910F004DDA87 /* ServiceDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDataTests.swift; sourceTree = "<group>"; };
 		A364A8DA2954C1FD007B803E /* ServiceAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIModel.swift; sourceTree = "<group>"; };
 		A364A8DD2954C3C4007B803E /* ServiceAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIResult.swift; sourceTree = "<group>"; };
 		A364A8E12954CA70007B803E /* ServiceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayout.swift; sourceTree = "<group>"; };
@@ -333,6 +337,14 @@
 			path = ReasonForCancelation;
 			sourceTree = "<group>";
 		};
+		A34EB29829C89103004DDA87 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A34EB29929C8910F004DDA87 /* ServiceDataTests.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		A364A8D72954BDFF007B803E /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +461,7 @@
 		A3F3497B29C22A17003E299A /* PoliServicesTests */ = {
 			isa = PBXGroup;
 			children = (
+				A34EB29829C89103004DDA87 /* Data */,
 				A3F3498A29C231F1003E299A /* DI */,
 				A3F3498D29C23293003E299A /* Mocks */,
 				A3F3498329C22A22003E299A /* Screens */,
@@ -499,6 +512,7 @@
 				A37B963229C287F900944414 /* ServiceMock.swift */,
 				A37B963729C3C36700944414 /* NetworkManagerMock.swift */,
 				A3422C2729C503A8002ACBCA /* NotificationManagerMock.swift */,
+				A34EB29629C89015004DDA87 /* UserDefaultsMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -768,10 +782,12 @@
 			files = (
 				A37B963629C3C0F700944414 /* NewServiceViewModelTests.swift in Sources */,
 				A3F3498629C22A32003E299A /* HomeViewModelTests.swift in Sources */,
+				A34EB29729C89015004DDA87 /* UserDefaultsMock.swift in Sources */,
 				A37B963829C3C36700944414 /* NetworkManagerMock.swift in Sources */,
 				A34EB29229C7CA25004DDA87 /* ServiceDetailsViewModelTests.swift in Sources */,
 				A3F3498C29C231FD003E299A /* AppContainer.swift in Sources */,
 				A3422C2829C503A8002ACBCA /* NotificationManagerMock.swift in Sources */,
+				A34EB29A29C8910F004DDA87 /* ServiceDataTests.swift in Sources */,
 				A34EB29529C7CD43004DDA87 /* ReasonForCancelationViewModelTests.swift in Sources */,
 				A3F3498F29C232A1003E299A /* ServiceDataMock.swift in Sources */,
 				A3422C2629C502E8002ACBCA /* SelectDateViewModelTests.swift in Sources */,
