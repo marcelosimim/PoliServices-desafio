@@ -6,6 +6,7 @@
 //  Created by Marcelo Simim Santos on 1/4/23.
 //
 //
+import Swinject
 import UIKit
 
 protocol ReasonForCancelationViewControllerDelegate: AnyObject {
@@ -14,7 +15,7 @@ protocol ReasonForCancelationViewControllerDelegate: AnyObject {
 
 class ReasonForCancelationViewController: UIViewController {
     private lazy var customView: ReasonForCancelationViewProtocol = ReasonForCancelationView()
-    private lazy var viewModel: ReasonForCancelationViewModelProtocol = ReasonForCancelationViewModel()
+    private lazy var viewModel: ReasonForCancelationViewModelProtocol = AppContainer.shared.resolve(ReasonForCancelationViewModelProtocol.self)!
     weak var delegate: ReasonForCancelationViewControllerDelegate?
 
     override func viewDidLoad() {

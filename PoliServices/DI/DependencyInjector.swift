@@ -25,5 +25,10 @@ class DependecyInjector {
 
         // MARK: - Service Details
         container.register(ServiceDetailsViewModelProtocol.self) { _ in ServiceDetailsViewModel() }
+
+        // MARK: - Reason For Cancelation
+        container.register(ReasonForCancelationViewModel.self) { r in
+            ReasonForCancelationViewModel(networkManager: r.resolve(NetworkManagerProtocol.self)!, serviceData: r.resolve(ServiceDataProtocol.self)!)
+        }
     }
 }

@@ -22,14 +22,19 @@ protocol ReasonForCancelationViewModelProtocol {
 }
 
 final class ReasonForCancelationViewModel: ReasonForCancelationViewModelProtocol {
-    private let networkManager = NetworkManager()
-    private let serviceData = ServiceData()
+    let networkManager: NetworkManagerProtocol
+    let serviceData: ServiceDataProtocol
     var selectedCell: Reason? = nil
     var reasons: [Reason] = []
     var didFinishFetchingReasonsSuccess: (() -> ()) = { }
     var didFinishFetchingReasonsFailure: ((String, String) -> ()) = { _, _ in }
     var didFinishSendingReasonsSuccess: (() -> ()) = { }
     var didFinishSendingReasonsFailure: ((String, String) -> ()) = { _, _ in }
+
+    init(networkManager: NetworkManagerProtocol, serviceData: ServiceDataProtocol) {
+        self.networkManager = networkManager
+        self.serviceData = serviceData
+    }
 
     func fetchReasons() {
         networkManager.fetchReasons { [weak self] result in
